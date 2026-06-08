@@ -1,0 +1,14 @@
+[
+  {
+    "id": "blueberry-muffins",
+    "file": "./data/recipes/blueberry-muffins.json"
+  },
+  {
+    "id": "pizza",
+    "file": "./data/recipes/pizza.json"
+  },
+  {
+    "id": "chicken-cutlets",
+    "file": "./data/recipes/chicken-cutlets.json"
+  }
+]
