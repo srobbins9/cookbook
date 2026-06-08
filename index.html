@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Cookbook Engine</title>
+
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#ffffff">
+
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+<header>
+  <h1>Cookbook Engine</h1>
+</header>
+
+<section class="controls">
+
+  <input
+    id="search"
+    type="text"
+    placeholder="Search recipes..."
+  >
+
+  <input
+    id="scale"
+    type="number"
+    value="1"
+    step="0.25"
+    min="0.25"
+  >
+
+  <button id="applyScale">
+    Apply Scale
+  </button>
+
+</section>
+
+<main id="app"></main>
+
+<script type="module" src="app.js"></script>
+
+<script>
+if ("serviceWorker" in navigator) {
+  navigator.serviceWorker.register("./service-worker.js");
+}
+</script>
+
+</body>
+</html>
