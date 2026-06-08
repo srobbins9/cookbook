@@ -1,0 +1,56 @@
+body {
+  font-family: Arial, sans-serif;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 20px;
+  background: #fafafa;
+}
+
+header {
+  margin-bottom: 20px;
+}
+
+.controls {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+}
+
+input, button {
+  padding: 10px;
+}
+
+.recipe {
+  background: white;
+  border: 1px solid #ddd;
+  padding: 15px;
+  margin-bottom: 15px;
+  border-radius: 10px;
+}
+
+On Jun 8, 2026, at 3:16 PM, Stephanie Robbins <stephanierobbins687@gmail.com> wrote:
+
+﻿
+manifest.json
+
+{
+  "name": "Cookbook Engine",
+  "short_name": "Cookbook",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#fafafa",
+  "theme_color": "#ffffff",
+  "icons": [
+    {
+      "src": "assets/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "assets/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
