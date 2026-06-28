@@ -21,9 +21,9 @@
   ],
 
   "ingredients": [
-    { "id": "pasta", "qty": { "int": 10, "num": 1, "den": 2 }, "unit": "oz", "scale_method": "baking" },
-    { "id": "avocado-oil", "name": "avocado oil", "qty": { "int": 1 }, "unit": "tbsp", "scale_method": "baking" },
-    { "id": "garlic", "qty": { "int": 4 }, "unit": "clove", "scale_method": "multiple_1_up" },
+    { "id": "pasta", "qty": { "int": 10, "num": 1, "den": 2 }, "unit": "oz", "plural": false, "scale_method": "baking" },
+    { "id": "avocado-oil", "name": "avocado oil", "qty": { "int": 1 }, "unit": "tbsp", "plural": false, "scale_method": "baking" },
+    { "id": "garlic", "qty": { "int": 4 }, "unit": "clove", "plural": false, "scale_method": "multiple_1_up" },
     { "id": "red-pepper-flakes", "name": "red pepper flakes", "qty": { "num": 1, "den": 4 }, "unit": "tsp", "scale_method": "fraction_4_down" },
     { "id": "vegetable-stock", "name": "vegtable stock", "qty": { "int": 1 }, "unit": "cup", "scale_method": "baking" },
     { "id": "cream-cheese", "name": "cream chese", "qty": { "int": 6, "num": 1, "den": 2 }, "unit": "oz", "scale_method": "baking" },
