@@ -1,0 +1,4 @@
+[
+  { "id": "egg", "file": "data/ingredients/egg.json" },
+  { "id": "salted-butter", "file": "data/ingredients/salted-butter.json" }
+]

@@ -1,0 +1,58 @@
+{
+  "id": "spinach-artichoke-pasta",
+  "name": "Spinach Artichoke Pasta",
+
+  "servings": {
+    "qty": 1,
+    "unit": "batch",
+    "scale_method": "multiple_1_up"
+  },
+
+  "equipment": [
+    { "id": "large-pot", "name": "large pot", "scale_method": "fixed" },
+    { "id": "medium-pot", "name": "medium pot", "scale_method": "fixed" },
+    { "id": "garlic-mincer", "name": "garlic mincer", "scale_method": "fixed" },
+    { "id": "measuring-spoons", "name": "measuring spoons", "scale_method": "fixed" },
+    { "id": "measuring-cup", "name": "measuring cup", "scale_method": "fixed" },
+    { "id": "large-slotted-spoon", "name": "large slotted spoon", "scale_method": "fixed" },
+    { "id": "silicone-spatula", "name": "silicone spatula", "scale_method": "fixed" },
+    { "id": "paper-towel", "name": "paper towel", "scale_method": "fixed" },
+    { "id": "knife", "name": "knife", "qty": 1, "scale_method": "fixed", "plural": "knives" }
+  ],
+
+  "ingredients": [
+    { "id": "pasta", "qty": { "int": 10, "num": 1, "den": 2 }, "unit": "oz", "scale_method": "baking" },
+    { "id": "avocado-oil", "name": "avocado oil", "qty": { "int": 1 }, "unit": "tbsp", "scale_method": "baking" },
+    { "id": "garlic", "qty": { "int": 4 }, "unit": "clove", "scale_method": "multiple_1_up" },
+    { "id": "red-pepper-flakes", "name": "red pepper flakes", "qty": { "num": 1, "den": 4 }, "unit": "tsp", "scale_method": "fraction_4_down" },
+    { "id": "vegetable-stock", "name": "vegtable stock", "qty": { "int": 1 }, "unit": "cup", "scale_method": "baking" },
+    { "id": "cream-cheese", "name": "cream chese", "qty": { "int": 6, "num": 1, "den": 2 }, "unit": "oz", "scale_method": "baking" },
+    { "id": "spinach", "qty": { "int": 16 }, "unit": "oz", "scale_method": "baking" },
+    { "id": "artichoke-hearts", "name": "artichoke hearts", "qty": { "int": 14 }, "unit": "oz", "scale_method": "baking" },
+    { "id": "italian-blend-cheese", "name": "Italian blend shredded cheese", "qty": { "num": 1, "den": 2 }, "unit": "cup", "scale_method": "baking" },
+    { "id": "black-pepper", "name": "ground black pepper", "qty": { "num": 1, "den": 2 }, "unit": "tsp", "scale_method": "fraction_4_down" },
+    { "id": "salt", "name": "salt", "qty": {}, "unit": "", "scale_method": "fixed" }
+  ],
+
+  "instructions": [
+    "Rip {spinach:full}, removing any stems. Place on {paper-towel} & set to the side.",
+    "Fill a {large-pot} 3-4\" with water. Place {large-pot} on stove on high heat.",
+    "Sprinkle some {salt} into the {large-pot} & stri with {large-slotted-spoon}.",
+    "Once water in {large-pot} is bubbling, add {pasta:full}.",
+    "Cook {pasta} until al dente. Once done, pour 1-2 cups of the pasta water into a bowl & strain the remaining water.",
+    "Peel & mince {garlic:full}. Place in small bowl.",
+    "Measure {red-pepper-flakes:full}. Place in small bowl.",
+    "Measure {avocado-oil:full} & place in {medium-pot} on medium heat.",
+    "Add the {garlic} & {red-pepper-flakes} to the {medium-pot} & fry for ~1 minute, careful not to burn the garlic.",
+    "Measure {vegetable-stock}. Pour into {medium-pot}.",
+    "Measure {cream-cheese}. Pour into {medium-pot}.",
+    "Stir {medium-pot} until cream cheese is melted.",
+    "Bring the sauce to a simmer, then add the {spinach}. Cook for 2-3 minutes, stirring often, until the spinach is wilted.",
+    "Measure {artichoke-hearts:full}. Place in {medium-pot}.",
+    "Stir the sauce until thick. If it looks too dy add a splash of the reserved pasta water.",
+    "Measure {italian-blend-cheese:full}. Pour into {medium-pot}.",
+    "Measure {black-pepper:full}. Pour into {medium-pot}.",
+    "Stir {medium-pot} to combine ingredients.",
+    "Pour sauce (from {medium-pot}) over {pasta} (in {large-pot}) using a {silicone-spatula}. Stir the {large-pot} with {large-slotted-spoon} to combine."
+  ]
+}

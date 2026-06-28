@@ -1,0 +1,11 @@
+{
+  "name": "Cookbook Engine",
+  "short_name": "Cookbook",
+  "description": "A digital cookbook with searchable recipes and scalable ingredient quantities.",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#ffffff",
+  "icons": []
+}

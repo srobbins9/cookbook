@@ -1,14 +1,30 @@
 [
   {
     "id": "blueberry-muffins",
-    "file": "./data/recipes/blueberry-muffins.json"
+    "name": "Blueberry Muffins",
+    "category": "breakfast",
+    "tags": ["baked", "sweet"],
+    "file": "data/recipes/blueberry-muffins.json"
   },
   {
     "id": "pizza",
-    "file": "./data/recipes/pizza.json"
+    "name": "Pizza",
+    "category": "dinner",
+    "tags": ["savory", "baked"],
+    "file": "data/recipes/pizza.json"
   },
   {
-    "id": "chicken-cutlets",
-    "file": "./data/recipes/chicken-cutlets.json"
+    "id": "honey-garlic-chicken",
+    "name": "Honey Garlic Chicken",
+    "category": "dinner",
+    "tags": ["savory", "protein"],
+    "file": "data/recipes/honey-garlic-chicken.json"
+  },
+  {
+    "id": "spinach-artichoke-pasta",
+    "name": "Spinach Artichoke Pasta",
+    "category": "dinner",
+    "tags": ["pasta", "vegetarian"],
+    "file": "data/recipes/spinach-artichoke-pasta.json"
   }
 ]

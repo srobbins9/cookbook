@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Ingredients</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+<div class="topbar">
+  <button id="recipeBtn">← Recipe</button>
+  <button id="printBtn">Print</button>
+  <button id="equipmentBtn">Equipment</button>
+  <button id="displayBtn">Display: Light</button>
+</div>
+
+<h1 id="title"></h1>
+<div id="content"></div>
+
+<script>
+
+// ✅ DISPLAY TOGGLE (same as recipe.html)
+function initDisplayToggle() {
+  const btn = document.getElementById("displayBtn");
+  if (!btn) return;
+
+  let mode = localStorage.getItem("displayMode") || "light";
+
+  function applyMode(m) {
+    if (m === "dark") {
+      document.body.classList.add("dark-mode");
+      btn.textContent = "Display: Dark";
+    } else {
+      document.body.classList.remove("dark-mode");
+      btn.textContent = "Display: Light";
+    }
+  }
+
+  applyMode(mode);
+
+  btn.addEventListener("click", () => {
+    mode = document.body.classList.contains("dark-mode") ? "light" : "dark";
+    localStorage.setItem("displayMode", mode);
+    applyMode(mode);
+  });
+}
+
+function nameOf(item) {
+  return (item.name || item.id || "").replace(/-/g, " ");
+}
+
+function capFirst(str) {
+  return str ? str.charAt(0).toUpperCase() + str.slice(1) : "";
+}
+
+function joinWithOr(parts) {
+  if (parts.length <= 1) return parts[0] || "";
+  if (parts.length === 2) return parts.join(" or ");
+  return parts.slice(0, -1).join(", ") + ", or " + parts.at(-1);
+}
+
+function buildEntries(items) {
+  return (items || []).map(e =>
+    e.options ? { type: "group", items: e.options } : { type: "single", item: e }
+  );
+}
+
+function flatten(entries) {
+  return entries.flatMap(e => e.type === "group" ? e.items : [e.item]);
+}
+
+function unique(items) {
+  return [...new Map(items.map(i => [i.id, i])).values()];
+}
+
+async function fetchJSON(p){
+  return (await fetch(p+"?v="+Date.now())).json();
+}
+
+async function init(){
+
+  initDisplayToggle(); // ✅ MOVED HERE (fix)
+
+  const id = new URLSearchParams(location.search).get("recipe");
+
+  recipeBtn.onclick = () => location.href = `recipe.html?recipe=${id}`;
+  printBtn.onclick = () => window.print();
+  equipmentBtn.onclick = () =>
+    location.href = `equipment.html?recipe=${id}`;
+
+  try {
+
+    const recipeIndex = await fetchJSON("data/recipes.json");
+    const recipe = await fetchJSON(recipeIndex.find(r=>r.id===id).file);
+    const index = await fetchJSON("data/ingredients.json");
+
+    const entries = buildEntries(recipe.ingredients);
+    const items = unique(flatten(entries));
+    const map = new Map(index.map(i=>[i.id,i]));
+
+    const results = await Promise.all(
+      items.map(async item => {
+        const entry = map.get(item.id);
+        if (!entry) return { item, detail:null };
+
+        try {
+          return { item, detail: await fetchJSON(entry.file) };
+        } catch {
+          return { item, detail:null };
+        }
+      })
+    );
+
+    let html = "";
+
+    results.forEach(r => {
+      if (!r.detail) return;
+
+      const name = capFirst(nameOf(r.detail));
+
+      const keys = Object.keys(r.detail).filter(k =>
+        k !== "id" && k !== "name" && k !== "link_name"
+      );
+
+      if (!keys.length) return;
+
+      html += `<h3>${name}</h3><ul>`;
+
+      keys.forEach(k => {
+        if (k === "link") {
+          const text = r.detail.link_name || "View";
+          html += `<li><strong>Link:</strong> <a href="${r.detail.link}" target="_blank">${text}</a></li>`;
+          return;
+        }
+        const label = capFirst(k.replace(/_/g," "));
+        html += `<li><strong>${label}:</strong> ${r.detail[k]}</li>`;
+      });
+
+      html += "</ul>";
+    });
+
+    const indexIds = new Set(index.map(i => i.id));
+
+    const other = entries.map(e => {
+      if (e.type === "group") {
+        const missing = e.items.filter(i => !indexIds.has(i.id));
+        return missing.length ? joinWithOr(missing.map(i=>capFirst(nameOf(i)))) : null;
+      }
+      return !indexIds.has(e.item.id) ? capFirst(nameOf(e.item)) : null;
+    }).filter(Boolean);
+
+    if (other.length) {
+      html += "<h3>Other</h3><ul>";
+      other.forEach(l => html += `<li>${l}</li>`);
+      html += "</ul>";
+    }
+
+    title.textContent = recipe.name + " Ingredients";
+    content.innerHTML = html;
+
+  } catch (e) {
+    console.error(e);
+    content.innerHTML = "<p>Error loading ingredients.</p>";
+  }
+}
+
+init();
+
+</script>
+
+</body>
+</html>

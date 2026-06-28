@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Recipe</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+<div class="topbar">
+  <button id="cookbookBtn">← Cookbook</button>
+  <button id="printBtn">Print</button>
+  <button id="ingredientsBtn">Ingredients</button>
+  <button id="equipmentBtn">Equipment</button>
+  <button id="unitsBtn">Units: English</button>
+  <button id="displayBtn">Display: Light</button>
+</div>
+
+<h1 id="title">Loading...</h1>
+
+<div class="controls">
+  <input id="scale" type="number" value="1" step="1" min="0">
+  <button id="applyScale">Apply Scale</button>
+</div>
+
+<div id="recipe"></div>
+
+<script type="module">
+
+import { scaleRecipe } from "./engine/scale.js";
+import { formatQty } from "./engine/format.js";
+import { convertRecipeUnits } from "./engine/convert.js";
+import {
+  expandInstruction,
+  getPluralName,
+  qtyToNumber
+} from "./engine/instructions.js";
+
+let currentUnits = "english";
+
+async function fetchJSON(path) {
+  const res = await fetch(path + "?v=" + Date.now());
+  return res.json();
+}
+
+function formatItemLine(item) {
+  const qtyText = formatQty(item.qty, item.unit || "");
+  return `${qtyText ? qtyText + " " : ""}${getPluralName(item, item.qty)}`;
+}
+
+function joinWithOr(parts) {
+  if (parts.length <= 1) return parts[0] || "";
+  if (parts.length === 2) return parts.join(" or ");
+  return parts.slice(0, -1).join(", ") + ", or " + parts.at(-1);
+}
+
+function initDisplayToggle() {
+  const btn = document.getElementById("displayBtn");
+  if (!btn) return;
+
+  let mode = localStorage.getItem("displayMode") || "light";
+
+  function applyMode(m) {
+    if (m === "dark") {
+      document.body.classList.add("dark-mode");
+      btn.textContent = "Display: Dark";
+    } else {
+      document.body.classList.remove("dark-mode");
+      btn.textContent = "Display: Light";
+    }
+  }
+
+  applyMode(mode);
+
+  btn.addEventListener("click", () => {
+    mode = document.body.classList.contains("dark-mode") ? "light" : "dark";
+    localStorage.setItem("displayMode", mode);
+    applyMode(mode);
+  });
+}
+
+// ---------- RENDER ----------
+function render(recipe) {
+  const scaled = scaleRecipe(recipe, getScale());
+  const converted = convertRecipeUnits(scaled, currentUnits);
+
+  let html = "";
+
+  const s = scaled.servings;
+  if (s) {
+    const val = qtyToNumber(s.qty);
+    const unit = Math.abs(val - 1) < 1e-6 ? s.unit : s.unit + "s";
+    html += `<p>Makes ${formatQty(s.qty)} ${unit}</p>`;
+  }
+
+  html += "<h3>Equipment</h3><ul>";
+  (converted.equipment || []).forEach(e => {
+    if (e.options) {
+      const parts = e.options.map(formatItemLine);
+      html += `<li>${joinWithOr(parts)}</li>`;
+      return;
+    }
+    html += `<li>${formatItemLine(e)}</li>`;
+  });
+  html += "</ul>";
+
+  html += "<h3>Ingredients</h3><ul>";
+  converted.ingredients.forEach(i => {
+    if (i.options) {
+      const parts = i.options.map(formatItemLine);
+      html += `<li>${joinWithOr(parts)}</li>`;
+      return;
+    }
+    html += `<li>${formatItemLine(i)}</li>`;
+  });
+  html += "</ul>";
+
+  html += "<h3>Instructions</h3><ol>";
+  converted.instructions.forEach(step => {
+    html += `<li>${expandInstruction(step, converted.ingredients, converted.equipment || [])}</li>`;
+  });
+  html += "</ol>";
+
+  document.getElementById("recipe").innerHTML = html;
+}
+
+function normalizeScaleInput() {
+  const scaleInput = document.getElementById("scale");
+  const val = parseFloat(scaleInput.value);
+  if (!Number.isFinite(val) || val <= 0) {
+    scaleInput.value = "1";
+    return 1;
+  }
+  return val;
+}
+
+function getScale() {
+  return normalizeScaleInput();
+}
+
+// ---------- INIT ----------
+async function init() {
+
+  initDisplayToggle(); // ✅ moved EARLY — important
+
+  const id = new URLSearchParams(location.search).get("recipe");
+  const index = await fetchJSON("data/recipes.json");
+  const recipe = await fetchJSON(index.find(r => r.id === id).file);
+
+  document.getElementById("title").textContent = recipe.name;
+
+  render(recipe);
+
+  document.getElementById("applyScale").onclick = () => {
+    normalizeScaleInput();
+    render(recipe);
+  };
+
+  document.getElementById("unitsBtn").onclick = () => {
+    currentUnits = currentUnits === "english" ? "metric" : "english";
+    unitsBtn.textContent = `Units: ${currentUnits === "english" ? "English" : "Metric"}`;
+    render(recipe);
+  };
+}
+
+// NAVIGATION
+document.getElementById("cookbookBtn").onclick = () => location.href = "index.html";
+document.getElementById("printBtn").onclick = () => window.print();
+document.getElementById("ingredientsBtn").onclick = () =>
+  location.href = `ingredients.html?recipe=${new URLSearchParams(location.search).get("recipe")}`;
+document.getElementById("equipmentBtn").onclick = () =>
+  location.href = `equipment.html?recipe=${new URLSearchParams(location.search).get("recipe")}`;
+
+init();
+
+</script>
+
+</body>
+</html>

@@ -1,54 +1,72 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <title>Cookbook Engine</title>
-
-  <link rel="manifest" href="manifest.json">
-  <meta name="theme-color" content="#ffffff">
+  <title>Cookbook</title>
 
   <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
 
-<header>
-  <h1>Cookbook Engine</h1>
-</header>
+  <!-- TOPBAR -->
+  <div class="topbar">
+    <button id="displayBtn">Display: Light</button>
+    <button id="sortBtn">Sort by: Category</button>
+    <button id="filterBtn">Filter Tags</button>
+  </div>
 
-<section class="controls">
+  <!-- SINGLE TITLE ONLY -->
+  <h1 class="page-title">Cookbook</h1>
 
-  <input
-    id="search"
-    type="text"
-    placeholder="Search recipes..."
-  >
+  <!-- SEARCH BAR -->
+  <div class="controls">
+    <input
+      id="search"
+      type="text"
+      placeholder="Search recipes..."
+    >
+  </div>
 
-  <input
-    id="scale"
-    type="number"
-    value="1"
-    step="0.25"
-    min="0.25"
-  >
+  <!-- TAG FILTER PANEL -->
+  <div id="tagPanel" hidden></div>
 
-  <button id="applyScale">
-    Apply Scale
-  </button>
+  <!-- RECIPE LIST -->
+  <div id="app"></div>
 
-</section>
+  <!-- DISPLAY TOGGLE -->
+  <script>
+    function initDisplayToggle() {
+      const btn = document.getElementById("displayBtn");
+      if (!btn) return;
 
-<main id="app"></main>
+      let mode = localStorage.getItem("displayMode") || "light";
 
-<script type="module" src="app.js"></script>
+      function applyMode(m) {
+        if (m === "dark") {
+          document.body.classList.add("dark-mode");
+          btn.textContent = "Display: Dark";
+        } else {
+          document.body.classList.remove("dark-mode");
+          btn.textContent = "Display: Light";
+        }
+      }
 
-<script>
-if ("serviceWorker" in navigator) {
-  navigator.serviceWorker.register("./service-worker.js");
-}
-</script>
+      applyMode(mode);
+
+      btn.addEventListener("click", () => {
+        mode = document.body.classList.contains("dark-mode") ? "light" : "dark";
+        localStorage.setItem("displayMode", mode);
+        applyMode(mode);
+      });
+    }
+
+    initDisplayToggle();
+  </script>
+
+  <script src="app.js"></script>
 
 </body>
 </html>

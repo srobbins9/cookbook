@@ -1,56 +1,228 @@
+/* ---------- GLOBAL BODY ---------- */
+
 body {
   font-family: Arial, sans-serif;
-  max-width: 900px;
+  font-size: 18px;
+  line-height: 1.6;
+  max-width: 750px;
   margin: 0 auto;
   padding: 20px;
-  background: #fafafa;
+  color: #222;
+  background: white;
 }
 
-header {
-  margin-bottom: 20px;
+/* ✅ DARK MODE */
+body.dark-mode {
+  background: black;
+  color: white;
 }
+
+
+/* ---------- PRIMARY TITLE (USED EVERYWHERE) ---------- */
+
+h1,
+.page-title {
+  font-family: Arial, sans-serif;
+  font-size: 2em;  
+  font-weight: bold; 
+  line-height: 1.2;
+  margin-top: 20px;
+  margin-bottom: 12px;
+}
+
+
+/* ---------- TOP ACTION ROW ---------- */
+
+.topbar {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-bottom: 8px;
+}
+
+
+/* ---------- TOP ACTION BUTTONS ---------- */
+
+.topbar button {
+  font-family: Arial, sans-serif;
+  font-size: 14px;
+  line-height: 1.2;
+  padding: 6px 10px;
+  border: 1px solid #ccc;
+  background: none;
+  color: #333;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+/* ✅ DARK MODE BUTTONS */
+body.dark-mode .topbar button {
+  background: #111;
+  color: white;
+  border: 1px solid #555;
+}
+
+
+/* ---------- TOP ACTION BUTTON HOVER ---------- */
+
+.topbar button:hover {
+  background: #f5f5f5;
+}
+
+/* ✅ DARK MODE HOVER */
+body.dark-mode .topbar button:hover {
+  background: #333;
+}
+
+
+/* ---------- BACK BUTTON ---------- */
+
+.back-button {
+  display: inline-block;
+}
+
+
+/* ---------- CONTROLS ---------- */
 
 .controls {
+  margin-bottom: 12px;
   display: flex;
+  align-items: center;
   gap: 10px;
-  margin-bottom: 20px;
-  flex-wrap: wrap;
 }
 
-input, button {
-  padding: 10px;
+
+/* ---------- SCALE HEADER ---------- */
+
+.controls h3 {
+  margin: 0;
+  font-size: 20px;
+  font-weight: 600;
 }
 
-.recipe {
-  background: white;
-  border: 1px solid #ddd;
-  padding: 15px;
-  margin-bottom: 15px;
-  border-radius: 10px;
+
+/* ---------- INPUT + BUTTON BASE ---------- */
+
+input,
+button {
+  font-size: 16px;
+  padding: 4px 6px;
 }
 
-On Jun 8, 2026, at 3:16 PM, Stephanie Robbins <stephanierobbins687@gmail.com> wrote:
+/* ✅ DARK INPUTS */
+body.dark-mode input {
+  background: #222;
+  color: white;
+  border: 1px solid #555;
+}
 
-﻿
-manifest.json
 
-{
-  "name": "Cookbook Engine",
-  "short_name": "Cookbook",
-  "start_url": "./",
-  "display": "standalone",
-  "background_color": "#fafafa",
-  "theme_color": "#ffffff",
-  "icons": [
-    {
-      "src": "assets/icon-192.png",
-      "sizes": "192x192",
-      "type": "image/png"
-    },
-    {
-      "src": "assets/icon-512.png",
-      "sizes": "512x512",
-      "type": "image/png"
-    }
-  ]
+/* ---------- SEARCH BOX ---------- */
+
+#search {
+  width: 100%;
+  font-size: 16px;
+  padding: 10px 12px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  box-sizing: border-box;
+}
+
+/* ✅ DARK SEARCH */
+body.dark-mode #search {
+  background: #222;
+  color: white;
+  border: 1px solid #555;
+}
+
+
+/* ---------- SECTION HEADERS ---------- */
+
+h3 {
+  font-size: 20px;
+  font-weight: 600;
+  margin-top: 16px;     /* reduced from 20 */
+  margin-bottom: 6px;
+}
+
+
+/* ---------- LIST CONSISTENCY ---------- */
+
+ul {
+  padding-left: 20px;
+  margin-top: 4px;
+  margin-bottom: 8px;   /* reduced */
+}
+
+
+/* ---------- BULLET SPACING ---------- */
+
+li {
+  margin-bottom: 4px;
+}
+
+
+/* ---------- ORDERED LIST ---------- */
+
+ol {
+  padding-left: 20px;
+  margin-top: 5px;
+  margin-bottom: 10px;
+}
+
+/* ---------- ORDERED LIST ITEM SPACING ---------- */
+
+ol li {
+  margin-bottom: 6px;
+}
+
+
+/* ---------- HOVERABLE RECIPE LINKS ---------- */
+
+.recipe-link {
+  cursor: pointer;
+}
+
+
+/* ---------- RECIPE LINK HOVER ---------- */
+
+.recipe-link:hover {
+  text-decoration: underline;
+}
+
+
+/* ---------- PRINT RULES ---------- */
+
+@media print {
+
+  /* ✅ FORCE LIGHT MODE ALWAYS */
+  body {
+    font-size: 12px;
+    line-height: 1.35;
+    background: white !important;
+    color: black !important;
+  }
+
+  body.dark-mode {
+    background: white !important;
+    color: black !important;
+  }
+
+  .topbar {
+    display: none;
+  }
+
+  .controls {
+    display: none;
+  }
+
+  .print-page-2 {
+    page-break-before: always;
+  }
+
+  .print-page-1,
+  .print-page-2 {
+    page-break-inside: avoid;
+  }
 }

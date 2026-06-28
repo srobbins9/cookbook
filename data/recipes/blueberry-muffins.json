@@ -1,0 +1,124 @@
+{
+  "id": "blueberry-muffins",
+  "name": "Blueberry Muffins",
+
+  "servings": {
+    "qty": 12,
+    "unit": "muffin",
+    "scale_method": "multiple_1_up"
+  },
+
+  "equipment": [
+	{
+      "qty": 1,
+      "id": "mixing-bowl",
+	  "name": "mixing bowl",
+      "scale_method": "fixed"
+    },
+	{
+	  "options": [
+		{
+		  "qty": 1,
+		  "id": "whisk",
+		  "name": "whisk",
+		  "scale_method": "fixed"
+		},
+		{
+		  "qty": 1,
+		  "id": "hand-mixer",
+		  "name": "hand mixer",
+		  "scale_method": "fixed"
+		}
+	  ]
+	},
+	{
+      "qty": 12,
+      "id": "paper-muffin-liner",
+	  "name": "paper muffin liner",
+      "scale_method": "multiple_1_up"
+    },
+	{
+      "qty": 12,
+	  "id": "foil-muffin-liner",
+      "name": "foil muffin liner",
+      "scale_method": "multiple_1_up"
+    },
+    {
+      "qty": 1,
+	  "id": "sheet-pan",
+      "name": "sheet pan",
+      "scale_method": "multiple_1_up"
+    },
+    {
+      "id": "oven",
+      "qty": 1,
+      "scale_method": "fixed"
+    }
+  ],
+
+  "ingredients": [
+    {
+	  "id": "sugar",
+      "qty": { "num": 2, "den": 3 },
+      "unit": "cup",
+      "scale_method": "baking",
+      "plural": false
+    },
+    {
+      "id": "salted-butter",
+	  "name": "salted butter",
+      "qty": { "num": 1, "den": 2 },
+      "unit": "cup",
+      "scale_method": "baking",
+      "plural": false
+    },
+    {
+      "id": "egg",
+      "qty": { "int": 2 },
+      "unit": "",
+      "scale_method": "multiple_1_up"
+    },
+    {
+      "id": "flour",
+      "qty": { "int": 1, "num": 7, "den": 8 },
+      "unit": "cup",
+      "scale_method": "baking",
+      "plural": false
+    },
+    {
+      "id": "baking-powder",
+	  "name": "baking powder",
+      "qty": { "int": 2 },
+      "unit": "tsp",
+      "scale_method": "fraction_4_down",
+      "plural": false
+    },
+    {
+      "id": "milk",
+      "qty": { "num": 1, "den": 2 },
+      "unit": "cup",
+      "scale_method": "baking",
+      "plural": false
+    },
+    {
+      "id": "blueberry",
+      "plural": "blueberries",
+      "qty": { "int": 2 },
+      "unit": "cup",
+      "scale_method": "baking"
+    }
+  ],
+
+  "instructions": [
+    "Preheat {oven:name} to 375\u00b0F.",
+    "Mix {salted-butter} and {sugar} until fully combined and smooth.",
+    "Add {egg} one at a time, mixing well after each addition.",
+    "In a separate bowl, combine {flour} and {baking-powder}.",
+    "Add {milk} to the dry ingredients and mix until just combined.",
+    "Combine the wet and dry mixtures, being careful not to overmix.",
+    "Gently fold in {blueberry}.",
+    "Divide the batter evenly into the muffin tin.",
+    "Bake in the {oven:name} for approximately 25 minutes, or until golden brown.",
+    "Allow muffins to cool for 10 minutes before serving."
+  ]
+}

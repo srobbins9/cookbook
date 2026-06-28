@@ -1,0 +1,147 @@
+{
+  "id": "honey-garlic-chicken",
+  "name": "Honey Garlic Chicken",
+
+  "servings": {
+    "qty": 1,
+    "unit": "batch",
+    "scale_method": "multiple_1_up"
+  },
+
+  "equipment": [
+    {
+      "qty": 1,
+      "id": "knife",
+      "name": "knife",
+      "scale_method": "fixed"
+    },
+    {
+      "qty": 1,
+      "id": "fork",
+      "name": "fork",
+      "scale_method": "fixed"
+    },
+    {
+      "id": "measuring-cup",
+      "name": "measuring cup",
+      "scale_method": "fixed",
+	  "plural": false
+    },
+    {
+      "id": "measuring-spoons",
+      "name": "measuring spoons",
+      "scale_method": "fixed",
+	  "plural": false
+    },
+    {
+      "id": "metal-tongs",
+      "name": "metal tongs",
+      "scale_method": "fixed",
+	  "plural": false
+    },
+    {
+      "id": "skillet",
+      "name": "skillet",
+      "scale_method": "fixed",
+	  "plural": false
+    },
+    {
+      "qty": 1,
+      "id": "medium-bowl",
+      "name": "medium bowl",
+      "scale_method": "fixed"
+    },
+    {
+      "qty": 2,
+      "id": "large-bowl",
+      "name": "large bowl",
+      "scale_method": "fixed"
+    }
+  ],
+
+  "ingredients": [
+    {
+      "id": "chicken-breast",
+      "name": "chicken breast",
+      "qty": { "int": 1 },
+      "unit": "lb",
+      "scale_method": "multiple_1_up",
+	  "plural": false
+    },
+    {
+      "id": "corn-starch",
+      "name": "corn starch",
+      "qty": { "num": 1, "den": 2 },
+      "unit": "tbsp",
+      "scale_method": "fraction_4_down",
+	  "plural": false
+    },
+    {
+      "id": "avocado-oil",
+      "name": "avocado oil",
+      "qty": { "int": 2 },
+      "unit": "tbsp",
+      "scale_method": "baking",
+	  "plural": false
+    },
+    {
+      "id": "unsalted-butter",
+      "name": "unsalted butter",
+      "qty": { "int": 2 },
+      "unit": "tbsp",
+      "scale_method": "baking",
+	  "plural": false
+    },
+    {
+      "id": "dried-minced-garlic",
+      "name": "dried minced garlic",
+      "qty": { "int": 2 },
+      "unit": "tbsp",
+      "scale_method": "baking",
+	  "plural": false
+    },
+    {
+      "id": "red-pepper-flakes",
+      "name": "red pepper flakes",
+      "qty": { "num": 1, "den": 2 },
+      "unit": "tsp",
+      "scale_method": "fraction_4_down",
+	  "plural": false
+    },
+    {
+      "id": "honey",
+      "qty": { "num": 1, "den": 4 },
+      "unit": "cup",
+      "scale_method": "baking",
+	  "plural": false
+    },
+    {
+      "id": "chicken-broth",
+      "name": "low sodium chicken broth",
+      "qty": { "num": 1, "den": 4 },
+      "unit": "cup",
+      "scale_method": "baking",
+	  "plural": false
+    },
+    {
+      "id": "black-pepper",
+      "name": "ground black pepper",
+      "qty": { "num": 1, "den": 2 },
+      "unit": "tsp",
+      "scale_method": "fraction_4_down",
+	  "plural": false
+    }
+  ],
+
+  "instructions": [
+    "Cut {chicken-breast:full} into ~1 inch cubes and place in a {large-bowl}.",
+    "Measure {corn-starch:full} and pour over chicken. Toss the chicken cubes until fully coated.",
+    "Place {skillet} on the stovetop and add {avocado-oil:full}. Set heat to medium.",
+    "Once the oil is hot, add {unsalted-butter:full} and allow to melt.",
+    "Add the chicken pieces and cook for about 5-7 minutes until browned and cooked through. Remove and place in a second {large-bowl}.",
+    "Add {honey:full}, {chicken-broth:full}, {dried-minced-garlic:full}, {red-pepper-flakes:full}, and {black-pepper:full} to the {medium-bowl}.",
+    "Whisk the sauce mixture together using a {fork}.",
+    "Pour the honey garlic sauce over the chicken in the {skillet} and reduce heat to low.",
+    "Toss everything together and cook for a few more minutes to allow the flavors to meld."
+  ]
+}

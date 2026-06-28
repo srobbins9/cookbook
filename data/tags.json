@@ -1,0 +1,8 @@
+[
+  { "id": "pasta", "name": "Pasta" },
+  { "id": "baked", "name": "Baked" },
+  { "id": "sweet", "name": "Sweet" },
+  { "id": "savory", "name": "Savory" },
+  { "id": "vegetarian", "name": "Vegetarian" },
+  { "id": "quick", "name": "Quick" }
+]
