@@ -1,4 +1,6 @@
 [
-  { "id": "sheet-pan", "file": "data/equipment/sheet-pan.json" },
-  { "id": "hand-mixer", "file": "data/equipment/hand-mixer.json" }
+  { "id": "hand-mixer", "file": "data/equipment/hand-mixer.json" },
+  { "id": "foil-cupcake-liner", "file": "data/equipment/foil-cupcake-liner.json" },
+  { "id": "paper-cupcake-liner", "file": "data/equipment/paper-cupcake-liner.json" },
+  { "id": "sheet-pan", "file": "data/equipment/sheet-pan.json" }
  ]

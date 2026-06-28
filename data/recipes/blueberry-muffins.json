@@ -33,14 +33,14 @@
 	},
 	{
       "qty": 12,
-      "id": "paper-muffin-liner",
-	  "name": "paper muffin liner",
+      "id": "paper-cupcake-liner",
+	  "name": "paper cupcake liner",
       "scale_method": "multiple_1_up"
     },
 	{
       "qty": 12,
-	  "id": "foil-muffin-liner",
-      "name": "foil muffin liner",
+	  "id": "foil-cupcake-liner",
+      "name": "foil cupcake liner",
       "scale_method": "multiple_1_up"
     },
     {
@@ -110,15 +110,16 @@
   ],
 
   "instructions": [
-    "Preheat {oven:name} to 375\u00b0F.",
-    "Mix {salted-butter} and {sugar} until fully combined and smooth.",
+    "Preheat {oven} to 375\u00b0F.",
+	"Place {foil-cupcake-liner:full} on {sheet-pan:full}. Place a {paper-cupcake-liner} in every {foil-cupcake-liner}.",
+    "Mix {salted-butter:full} and {sugar:full} until fully combined and smooth.",
     "Add {egg} one at a time, mixing well after each addition.",
-    "In a separate bowl, combine {flour} and {baking-powder}.",
+    "In a separate bowl, combine {flour:full} and {baking-powder:full}.",
     "Add {milk} to the dry ingredients and mix until just combined.",
     "Combine the wet and dry mixtures, being careful not to overmix.",
-    "Gently fold in {blueberry}.",
-    "Divide the batter evenly into the muffin tin.",
-    "Bake in the {oven:name} for approximately 25 minutes, or until golden brown.",
+    "Gently fold in {blueberry:full}.",
+    "Divide the batter evenly into the cupcake liners.",
+    "Bake in the {oven} for approximately 25 minutes, or until golden brown.",
     "Allow muffins to cool for 10 minutes before serving."
   ]
 }

@@ -1,4 +1,17 @@
 [
+  { "id": "artichoke-hearts", "file": "data/ingredients/artichoke-hearts.json" },
+  { "id": "avocado-oil", "file": "data/ingredients/avocado-oil.json" },
+  { "id": "baking-powder", "file": "data/ingredients/baking-powder.json" },
+  { "id": "baking-soda", "file": "data/ingredients/baking-soda.json" },
+  { "id": "black-pepper", "file": "data/ingredients/black-pepper.json" },
+  { "id": "corn-starch", "file": "data/ingredients/corn-starch.json" },
+  { "id": "cream-cheese", "file": "data/ingredients/cream-cheese.json" },
   { "id": "egg", "file": "data/ingredients/egg.json" },
-  { "id": "salted-butter", "file": "data/ingredients/salted-butter.json" }
+  { "id": "honey", "file": "data/ingredients/honey.json" },
+  { "id": "italian-blend-shredded-cheese", "file": "data/ingredients/italian-blend-shredded-cheese.json" },
+  { "id": "italian-breadcrumbs", "file": "data/ingredients/italian-breadcrumbs.json" },
+  { "id": "olive-oil", "file": "data/ingredients/olive-oil.json" },
+  { "id": "salted-butter", "file": "data/ingredients/salted-butter.json" },
+  { "id": "tomato-paste", "file": "data/ingredients/tomato-paste.json" },
+  { "id": "vanilla-extract", "file": "data/ingredients/vanilla-extract.json" }
 ]
