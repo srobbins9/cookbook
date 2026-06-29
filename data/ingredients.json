@@ -10,9 +10,11 @@
   { "id": "honey", "file": "data/ingredients/honey.json" },
   { "id": "italian-blend-shredded-cheese", "file": "data/ingredients/italian-blend-shredded-cheese.json" },
   { "id": "italian-breadcrumbs", "file": "data/ingredients/italian-breadcrumbs.json" },
+  { "id": "mini-italian-meatballs", "file": "data/ingredients/mini-italian-meatballs.json" },
   { "id": "mozzarella-cheese-sliced", "file": "data/ingredients/mozzarella-cheese-sliced.json" },
   { "id": "olive-oil", "file": "data/ingredients/olive-oil.json" },
   { "id": "salted-butter", "file": "data/ingredients/salted-butter.json" },
   { "id": "tomato-paste", "file": "data/ingredients/tomato-paste.json" },
+  { "id": "top-crop-soup-greens", "file": "data/ingredients/top-crop-soup-greens.json" },
   { "id": "vanilla-extract", "file": "data/ingredients/vanilla-extract.json" }
 ]
