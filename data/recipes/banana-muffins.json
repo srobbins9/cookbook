@@ -5,24 +5,25 @@
   "servings": { "qty": 15, "unit": "muffin", "scale_method": "multiple_1_up" },
 
   "equipment": [
-	{ "options": [ { "qty": 1, "id": "gallon-bag", "name": "gallon bag", "scale_method": "fixed" }, { "qty": 1, "id": "large-bowl", "name": "large bowl", "scale_method": "fixed" } ] },
 	{ "qty": 1, "id": "measuring-cup", "name": "measuring cup", "scale_method": "fixed" }, 
 	{ "id": "measuring-spoons", "name": "measuring spoons", "scale_method": "fixed" }, 
+	{ "qty": 1, "id": "knife", "scale_method": "fixed" },
+	{ "qty": 1, "id": "fork", "scale_method": "fixed" },
+	{ "qty": 1, "id": "large-bowl", "name": "large bowl", "scale_method": "fixed" },
 	{ "qty": 1, "id": "mixing-bowl", "name": "mixing bowl", "scale_method": "fixed" },
 	{ "qty": 1, "id": "small-bowl", "name": "small bowl", "scale_method": "fixed" },
 	{ "qty": 1, "id": "medium-bowl", "name": "medium bowl", "scale_method": "fixed" },
 	{ "options": [ { "qty": 1, "id": "whisk", "name": "whisk", "scale_method": "fixed" }, { "qty": 1, "id": "hand-mixer", "name": "hand mixer", "scale_method": "fixed" } ] },
-	{ "id": "silicone-spatula", "name": "silicone spatula", "scale_method": "fixed" },
-	{ "qty": 1, "id": "fork", "scale_method": "fixed" },
+	{ "qty": 1, "id": "silicone-spatula", "name": "silicone spatula", "scale_method": "fixed" },
 	{ "qty": 1, "id": "masher", "scale_method": "fixed" },
 	{ "qty": 15, "id": "paper-cupcake-liner", "name": "paper cupcake liner", "scale_method": "multiple_1_up" },
 	{ "qty": 15, "id": "foil-cupcake-liner", "name": "foil cupcake liner", "scale_method": "multiple_1_up" },
     { "qty": 1, "id": "sheet-pan", "name": "sheet pan", "scale_method": "multiple_1_up" },
-    { "id": "oven", "qty": 1, "scale_method": "fixed" }
+    { "qty": 1, "id": "oven", "scale_method": "fixed" }
   ],
 
   "ingredients": [
-    { "id": "ap-flour", "name": "all-purpose flour" "qty": { "int": 1, "num": 13, "den": 16 }, "unit": "cup", "plural": false, "scale_method": "baking" },
+    { "id": "ap-flour", "name": "all-purpose flour", "qty": { "int": 1, "num": 13, "den": 16 }, "unit": "cup", "plural": false, "scale_method": "baking" },
 	{ "id": "baking-powder", "name": "baking powder", "qty": { "int": 4 }, "unit": "tsp", "plural": false, "scale_method": "baking" },
 	{ "id": "white-sugar", "qty": { "num": 1, "den": 2 }, "unit": "cup", "plural": false, "scale_method": "baking" },
     { "id": "salted-butter", "name": "salted butter", "qty": { "int": 10 }, "unit": "tbsp", "scale_method": "baking", "plural": false },
@@ -33,18 +34,23 @@
 
   "instructions": [
 	"Leave {salted-butter:full} and {egg:full} out on counter to get to room temperature.",
-	"Measure {ap-flour:full}. Level off the tablespoons of flour with a {knife} before removing. Pour the flour in a {gallon	
-	
-    "Preheat {oven} to 375\u00b0F.",
 	"Place {foil-cupcake-liner:full} on {sheet-pan:full}. Place a {paper-cupcake-liner} in every {foil-cupcake-liner}.",
-    "Mix {salted-butter:full} and {white-sugar:full} until fully combined and smooth.",
-    "Add {egg} one at a time, mixing well after each addition.",
-    "In a separate bowl, combine {ap-flour:full} and {baking-powder:full}.",
-    "Add {milk} to the dry ingredients and mix until just combined.",
-    "Combine the wet and dry mixtures, being careful not to overmix.",
-    "Gently fold in {blueberry:full}.",
-    "Divide the batter evenly into the cupcake liners.",
-    "Bake in the {oven} for approximately 25 minutes, or until golden brown.",
-    "Allow muffins to cool for 10 minutes before serving."
+	"Measure {ap-flour:full}. Level off the tablespoons of flour with a {knife} before removing. Pour the flour in {large-bowl}",
+	"Measure {baking-soda:full} and pour into {large-bowl}.",
+	"Whisk flour and baking soda together until combined.",
+	"Measure {white-sugar:full} and pour into {mixing-bowl}.",
+	"Cut butter into smaller chunks and place in {small-bowl}. Cover and heat in microwave, stirring every 15 seconds. Once full melted, pour in {mixing-bowl}, using a {silicone-spatula} to get all the butter.",
+	"Whisk sugar and butter for ~3 minutes or until light and airy",
+	"Crack {egg:full} into {small-bowl}. Whisk with {fork} and pour into {mixing-bowl}.",
+	"Measure {vanilla-extract:full} and pour into {mixing-bowl}.",
+	"Whisk {mixing-bowl} until ingredients are combined.",
+    "Preheat {oven} to 325\u00b0F.",
+	"While whisking {mixing-bowl}, incrementally add dry ingredients. Be careful not to overmix.",
+	"Peel {banana:full} and place in {medium-bowl}. Mash with masher.",
+	"Pour bananas into {mixing-bowl}, using a {silicone-spatula} to get all the banana pieces.",
+	"Fold bananas into batter using the {silicone-spatula}.",
+    "Fill each cupcake liner 2/3 full with batter.",
+    "Bake muffins in the {oven} until tops are golden brown or a toothpick inserted in the center comes out clean (~25-30 minutes).",
+    "Allow muffins to cool on the {sheet-pan} for 10 minutes before serving."
   ]
 }

@@ -16,11 +16,11 @@
   "ingredients": [
     { "id": "white-sugar", "qty": { "num": 2, "den": 3 }, "unit": "cup", "plural": false, "scale_method": "baking" },
     { "id": "salted-butter", "name": "salted butter", "qty": { "num": 1, "den": 2 }, "unit": "cup", "scale_method": "baking", "plural": false },
-    { "id": "egg", "qty": { "int": 2 }, "unit": "", "scale_method": "multiple_1_up" },
-    { "id": "ap-flour", "name": "all-purpose flour" "qty": { "int": 1, "num": 7, "den": 8 }, "unit": "cup", "plural": false, "scale_method": "baking" },
+    { "id": "egg", "qty": { "int": 2 }, "scale_method": "multiple_1_up" },
+    { "id": "ap-flour", "name": "all-purpose flour", "qty": { "int": 1, "num": 7, "den": 8 }, "unit": "cup", "plural": false, "scale_method": "baking" },
     { "id": "baking-powder", "name": "baking powder", "qty": { "int": 2 }, "unit": "tsp", "plural": false, "scale_method": "baking" },
     { "id": "milk", "qty": { "num": 1, "den": 2 }, "unit": "cup", "plural": false, "scale_method": "baking" },
-    { "id": "blueberry", "plural": "blueberries", "qty": { "int": 2 }, "unit": "cup", "scale_method": "baking" }
+    { "id": "blueberry", "plural": "blueberries", "qty": { "int": 2 }, "unit": "cup", "scale_method": "fraction_4_rounded" }
   ],
 
   "instructions": [

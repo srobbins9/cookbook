@@ -1,0 +1,34 @@
+{
+  "id": "broccoli-cauliflower-soup",
+  "name": "Broccoli Cauliflower Soup",
+
+  "servings": { "qty": 10, "unit": "cup", "scale_method": "fraction_2_rounded" },
+
+  "equipment": [
+    { "qty": 1, "id": "garlic-mincer", "name": "garlic mincer", "scale_method": "fixed" },
+	{ "qty": 1, "id": "measuring-cup", "name": "measuring cup", "scale_method": "fixed" }, 
+	{ "id": "measuring-spoons", "name": "measuring spoons", "scale_method": "fixed" },
+	{ "qty": 1, "id": "silicone-spatula", "name": "silicone spatula", "scale_method": "fixed" },
+	{ "qty": 1, "id": "large-metal-spoon", "name": "large metal spoon", "scale_method": "fixed" },
+	{ "qty": 1, "id": "large-pot", "name": "large pot", "scale_method": "fixed" },
+  ],
+
+  "ingredients": [
+    { "id": "salted-butter", "name": "salted butter", "qty": { "int": 1 }, "unit": "tbsp", "plural": false, "scale_method": "fixed" },
+	{ "id": "garlic", "qty": { "int": 4 }, "unit": "clove", "plural": false, "scale_method": "multiple_1_up" },
+	{ "id": "yellow-onion", "qty": { "int": 1 }, "unit": "yellow-onion", "scale_method": "fraction_4_rounded" },
+    { "id": "ap-flour", "name": "all-purpose flour", "qty": { "int": 3 }, "unit": "tbsp", "plural": false, "scale_method": "baking" },
+	{ "id": "chicken-broth", "name": "low-sodium chicken broth", "qty": { "int": 1, "num": 1, "den": 2 }, "unit": "cup", "plural": false, "scale_method": "fraction_4_rounded" },
+	{ "id": "heavy-whipping-cream", "name": "heavy whipping cream", "qty": { "num": 1, "den": 2 }, "unit": "cup", "plural": false, "scale_method": "fraction_4_rounded" },
+	{ "id": "cauliflower", "qty": { "int": 2 }, "unit": "head", "plural": false, "scale_method": "fraction_4_rounded" },
+	{ "id": "broccolli", "qty": { "int": 3 }, "unit": "head", "plural": false, "scale_method": "fraction_4_rounded" },
+	{ "id": "black-pepper", "name": "ground black pepper", "plural": false },
+	{ "id": "cayenne-pepper", "name": "ground cayenne pepper", "plural": false }
+  ],
+
+  "instructions": [
+	"
+	"Measure {salted-butter} and place in {large-pot} on stovetop set to medium heat.",
+
+  ]
+}

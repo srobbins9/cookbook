@@ -9,15 +9,15 @@
   },
 
   "equipment": [
-    { "id": "large-pot", "name": "large pot", "scale_method": "fixed" },
-    { "id": "medium-pot", "name": "medium pot", "scale_method": "fixed" },
-    { "id": "garlic-mincer", "name": "garlic mincer", "scale_method": "fixed" },
+    { "qty": 1, "id": "large-pot", "name": "large pot", "scale_method": "fixed" },
+    { "qty": 1, "id": "medium-pot", "name": "medium pot", "scale_method": "fixed" },
+    { "qty": 1, "id": "garlic-mincer", "name": "garlic mincer", "scale_method": "fixed" },
     { "id": "measuring-spoons", "name": "measuring spoons", "scale_method": "fixed" },
-    { "id": "measuring-cup", "name": "measuring cup", "scale_method": "fixed" },
-    { "id": "large-slotted-spoon", "name": "large slotted spoon", "scale_method": "fixed" },
-    { "id": "silicone-spatula", "name": "silicone spatula", "scale_method": "fixed" },
+    { "qty": 1, "id": "measuring-cup", "name": "measuring cup", "scale_method": "fixed" },
+    { "qty": 1, "id": "large-slotted-spoon", "name": "large slotted spoon", "scale_method": "fixed" },
+    { "qty": 1, "id": "silicone-spatula", "name": "silicone spatula", "scale_method": "fixed" },
     { "id": "paper-towels", "name": "paper towels", "scale_method": "fixed" },
-    { "id": "knife", "name": "knife", "qty": 1, "scale_method": "fixed", "plural": "knives" }
+    { "qty": 1, "id": "knife", "name": "knife", "scale_method": "fixed", "plural": "knives" }
   ],
 
   "ingredients": [
