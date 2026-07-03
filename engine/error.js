@@ -52,10 +52,9 @@ export function showPageError(containerId, error) {
 
 // Shared JSON loader with detailed diagnostics.
 //
-// This intentionally loads text first and then parses JSON.
-// Doing so ensures JSON syntax errors are converted into
-// normal JavaScript Errors that can be caught and displayed
-// on the page.
+// Loads text first, then parses manually so JSON syntax
+// errors can be converted into readable messages with
+// file name, line number, column, and context.
 export async function fetchJSON(path) {
 
   let response;
@@ -70,7 +69,9 @@ export async function fetchJSON(path) {
   catch (err) {
 
     throw new Error(
-      `Network error while loading:\n\n${path}\n\n${err.message}`
+      `Network error while loading:\n\n` +
+      `${path}\n\n` +
+      `${err.message}`
     );
 
   }
@@ -78,7 +79,9 @@ export async function fetchJSON(path) {
   if (!response.ok) {
 
     throw new Error(
-      `Failed to load file:\n\n${path}\n\nHTTP ${response.status} ${response.statusText}`
+      `Failed to load file:\n\n` +
+      `${path}\n\n` +
+      `HTTP ${response.status} ${response.statusText}`
     );
 
   }
@@ -93,7 +96,9 @@ export async function fetchJSON(path) {
   catch (err) {
 
     throw new Error(
-      `Failed reading file:\n\n${path}\n\n${err.message}`
+      `Failed reading file:\n\n` +
+      `${path}\n\n` +
+      `${err.message}`
     );
 
   }
@@ -106,7 +111,9 @@ export async function fetchJSON(path) {
   catch (err) {
 
     let detailedMessage =
-      `Invalid JSON in:\n\n${path}\n\n${err.message}`;
+      `Invalid JSON in:\n\n` +
+      `${path}\n\n` +
+      `${err.message}`;
 
     const match =
       err.message.match(/position\s+(\d+)/i);
@@ -130,71 +137,29 @@ export async function fetchJSON(path) {
         const column =
           position - lastNewline;
 
+        const lines =
+          text.split("\n");
+
+        const errorLine =
+          lines[line - 1] || "";
+
+        const pointer =
+          " ".repeat(Math.max(column - 1, 0)) + "^";
+
         detailedMessage =
           `Invalid JSON in:\n\n` +
           `${path}\n\n` +
           `Line: ${line}\n` +
           `Column: ${column}\n` +
           `Position: ${position}\n\n` +
+          `Problem Line:\n\n` +
+          `${errorLine}\n` +
+          `${pointer}\n\n` +
           `${err.message}`;
       }
     }
 
     throw new Error(detailedMessage);
-
-  }
-}
-
-  let response;
-
-  try {
-
-    response = await fetch(
-      `${path}?v=${Date.now()}`
-    );
-
-  }
-  catch (err) {
-
-    throw new Error(
-      `Network error while loading:\n\n${path}\n\n${err.message}`
-    );
-
-  }
-
-  if (!response.ok) {
-
-    throw new Error(
-      `Failed to load file:\n\n${path}\n\nHTTP ${response.status} ${response.statusText}`
-    );
-
-  }
-
-  let text;
-
-  try {
-
-    text = await response.text();
-
-  }
-  catch (err) {
-
-    throw new Error(
-      `Failed reading file:\n\n${path}\n\n${err.message}`
-    );
-
-  }
-
-  try {
-
-    return JSON.parse(text);
-
-  }
-  catch (err) {
-
-    throw new Error(
-      `Invalid JSON in:\n\n${path}\n\n${err.message}`
-    );
 
   }
 }
