@@ -28,7 +28,7 @@
     { "id": "vegetable-stock", "name": "vegtable stock", "qty": { "int": 1 }, "unit": "cup", "plural": false, "scale_method": "baking" },
     { "id": "cream-cheese", "name": "cream cheese", "qty": { "int": 6, "num": 1, "den": 2 }, "unit": "oz", "plural": false, "scale_method": "baking" },
     { "id": "spinach", "qty": { "int": 16 }, "unit": "oz", "plural": false, "scale_method": "baking" },
-    { "id": "artichoke-hearts", "name": "artichoke hearts", "qty": { "int": 14 }, "unit": "oz", "plural": false, "plural": false, "scale_method": "baking" },
+    { "id": "artichoke-hearts", "name": "artichoke hearts", "qty": { "int": 14 }, "unit": "oz", "plural": false, "scale_method": "baking" },
     { "id": "italian-blend-shredded-cheese", "name": "Italian blend shredded cheese", "qty": { "num": 1, "den": 2 }, "unit": "cup", "plural": false, "scale_method": "baking" },
     { "id": "black-pepper", "name": "ground black pepper", "qty": { "num": 1, "den": 2 }, "unit": "tsp", "plural": false, "scale_method": "fraction_4_down" },
     { "id": "salt", "plural": false, "scale_method": "fixed" }
