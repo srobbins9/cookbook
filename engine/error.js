@@ -105,6 +105,93 @@ export async function fetchJSON(path) {
   }
   catch (err) {
 
+    let detailedMessage =
+      `Invalid JSON in:\n\n${path}\n\n${err.message}`;
+
+    const match =
+      err.message.match(/position\s+(\d+)/i);
+
+    if (match) {
+
+      const position =
+        Number(match[1]);
+
+      if (Number.isFinite(position)) {
+
+        const before =
+          text.substring(0, position);
+
+        const line =
+          before.split("\n").length;
+
+        const lastNewline =
+          before.lastIndexOf("\n");
+
+        const column =
+          position - lastNewline;
+
+        detailedMessage =
+          `Invalid JSON in:\n\n` +
+          `${path}\n\n` +
+          `Line: ${line}\n` +
+          `Column: ${column}\n` +
+          `Position: ${position}\n\n` +
+          `${err.message}`;
+      }
+    }
+
+    throw new Error(detailedMessage);
+
+  }
+}
+
+  let response;
+
+  try {
+
+    response = await fetch(
+      `${path}?v=${Date.now()}`
+    );
+
+  }
+  catch (err) {
+
+    throw new Error(
+      `Network error while loading:\n\n${path}\n\n${err.message}`
+    );
+
+  }
+
+  if (!response.ok) {
+
+    throw new Error(
+      `Failed to load file:\n\n${path}\n\nHTTP ${response.status} ${response.statusText}`
+    );
+
+  }
+
+  let text;
+
+  try {
+
+    text = await response.text();
+
+  }
+  catch (err) {
+
+    throw new Error(
+      `Failed reading file:\n\n${path}\n\n${err.message}`
+    );
+
+  }
+
+  try {
+
+    return JSON.parse(text);
+
+  }
+  catch (err) {
+
     throw new Error(
       `Invalid JSON in:\n\n${path}\n\n${err.message}`
     );
