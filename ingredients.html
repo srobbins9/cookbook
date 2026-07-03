@@ -71,14 +71,22 @@ async function init() {
       throw new Error("Missing recipe parameter in URL.");
     }
 
-    document.getElementById("recipeBtn").onclick = () =>
+    const recipeBtn = document.getElementById("recipeBtn");
+      if (recipeBtn) {
+        recipeBtn.onclick = () =>
       location.href = `recipe.html?recipe=${id}`;
+    }
 
-    document.getElementById("printBtn").onclick = () =>
-      window.print();
+    const printBtn = document.getElementById("printBtn");
+      if (printBtn) {
+        printBtn.onclick = () => window.print();
+    }
 
-    document.getElementById("equipmentBtn").onclick = () =>
+    const equipmentBtn = document.getElementById("equipmentBtn");
+      if (equipmentBtn) {
+        equipmentBtn.onclick = () =>
       location.href = `equipment.html?recipe=${id}`;
+    }
 
     const recipeIndex = await fetchJSON("data/recipes.json");
 
