@@ -51,10 +51,6 @@ export function showPageError(containerId, error) {
 }
 
 // Shared JSON loader with detailed diagnostics.
-//
-// Loads text first, then parses manually so JSON syntax
-// errors can be converted into readable messages with
-// file name, line number, column, and context.
 export async function fetchJSON(path) {
 
   let response;
@@ -110,56 +106,11 @@ export async function fetchJSON(path) {
   }
   catch (err) {
 
-    let detailedMessage =
+    throw new Error(
       `Invalid JSON in:\n\n` +
       `${path}\n\n` +
-      `${err.message}`;
-
-    const match =
-      err.message.match(/position\s+(\d+)/i);
-
-    if (match) {
-
-      const position =
-        Number(match[1]);
-
-      if (Number.isFinite(position)) {
-
-        const before =
-          text.substring(0, position);
-
-        const line =
-          before.split("\n").length;
-
-        const lastNewline =
-          before.lastIndexOf("\n");
-
-        const column =
-          position - lastNewline;
-
-        const lines =
-          text.split("\n");
-
-        const errorLine =
-          lines[line - 1] || "";
-
-        const pointer =
-          " ".repeat(Math.max(column - 1, 0)) + "^";
-
-        detailedMessage =
-          `Invalid JSON in:\n\n` +
-          `${path}\n\n` +
-          `Line: ${line}\n` +
-          `Column: ${column}\n` +
-          `Position: ${position}\n\n` +
-          `Problem Line:\n\n` +
-          `${errorLine}\n` +
-          `${pointer}\n\n` +
-          `${err.message}`;
-      }
-    }
-
-    throw new Error(detailedMessage);
+      `${err.message}`
+    );
 
   }
 }
