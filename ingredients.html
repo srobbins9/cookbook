@@ -1,25 +1,9 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>Ingredients</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="styles.css">
-</head>
+<script type="module">
 
-<body>
-
-<div class="topbar">
-  <button id="recipeBtn">← Recipe</button>
-  <button id="printBtn">Print</button>
-  <button id="equipmentBtn">Equipment</button>
-  <button id="displayBtn">Display: Light</button>
-</div>
-
-<h1 id="title"></h1>
-<div id="content"></div>
-
-<script>
+import {
+  showPageError,
+  fetchJSON
+} from "./engine/error.js";
 
 // ✅ DISPLAY TOGGLE (same as recipe.html)
 function initDisplayToggle() {
@@ -75,40 +59,60 @@ function unique(items) {
   return [...new Map(items.map(i => [i.id, i])).values()];
 }
 
-async function fetchJSON(p){
-  return (await fetch(p+"?v="+Date.now())).json();
-}
-
-async function init(){
-
-  initDisplayToggle(); // ✅ MOVED HERE (fix)
-
-  const id = new URLSearchParams(location.search).get("recipe");
-
-  recipeBtn.onclick = () => location.href = `recipe.html?recipe=${id}`;
-  printBtn.onclick = () => window.print();
-  equipmentBtn.onclick = () =>
-    location.href = `equipment.html?recipe=${id}`;
+async function init() {
 
   try {
 
+    initDisplayToggle();
+
+    const id = new URLSearchParams(location.search).get("recipe");
+
+    if (!id) {
+      throw new Error("Missing recipe parameter in URL.");
+    }
+
+    recipeBtn.onclick = () => location.href = `recipe.html?recipe=${id}`;
+    printBtn.onclick = () => window.print();
+    equipmentBtn.onclick = () =>
+      location.href = `equipment.html?recipe=${id}`;
+
     const recipeIndex = await fetchJSON("data/recipes.json");
-    const recipe = await fetchJSON(recipeIndex.find(r=>r.id===id).file);
+
+    const recipeEntry = recipeIndex.find(r => r.id === id);
+
+    if (!recipeEntry) {
+      throw new Error(
+        `Recipe "${id}" was not found in data/recipes.json`
+      );
+    }
+
+    const recipe = await fetchJSON(recipeEntry.file);
+
     const index = await fetchJSON("data/ingredients.json");
 
     const entries = buildEntries(recipe.ingredients);
     const items = unique(flatten(entries));
-    const map = new Map(index.map(i=>[i.id,i]));
+    const map = new Map(index.map(i => [i.id, i]));
 
     const results = await Promise.all(
       items.map(async item => {
         const entry = map.get(item.id);
-        if (!entry) return { item, detail:null };
+
+        if (!entry) {
+          return { item, detail: null };
+        }
 
         try {
-          return { item, detail: await fetchJSON(entry.file) };
-        } catch {
-          return { item, detail:null };
+          return {
+            item,
+            detail: await fetchJSON(entry.file)
+          };
+        }
+        catch {
+          return {
+            item,
+            detail: null
+          };
         }
       })
     );
@@ -116,12 +120,15 @@ async function init(){
     let html = "";
 
     results.forEach(r => {
+
       if (!r.detail) return;
 
       const name = capFirst(nameOf(r.detail));
 
       const keys = Object.keys(r.detail).filter(k =>
-        k !== "id" && k !== "name" && k !== "link_name"
+        k !== "id" &&
+        k !== "name" &&
+        k !== "link_name"
       );
 
       if (!keys.length) return;
@@ -129,12 +136,16 @@ async function init(){
       html += `<h3>${name}</h3><ul>`;
 
       keys.forEach(k => {
+
         if (k === "link") {
           const text = r.detail.link_name || "View";
+
           html += `<li><strong>Link:</strong> <a href="${r.detail.link}" target="_blank">${text}</a></li>`;
           return;
         }
-        const label = capFirst(k.replace(/_/g," "));
+
+        const label = capFirst(k.replace(/_/g, " "));
+
         html += `<li><strong>${label}:</strong> ${r.detail[k]}</li>`;
       });
 
@@ -144,31 +155,46 @@ async function init(){
     const indexIds = new Set(index.map(i => i.id));
 
     const other = entries.map(e => {
+
       if (e.type === "group") {
+
         const missing = e.items.filter(i => !indexIds.has(i.id));
-        return missing.length ? joinWithOr(missing.map(i=>capFirst(nameOf(i)))) : null;
+
+        return missing.length
+          ? joinWithOr(missing.map(i => capFirst(nameOf(i))))
+          : null;
       }
-      return !indexIds.has(e.item.id) ? capFirst(nameOf(e.item)) : null;
+
+      return !indexIds.has(e.item.id)
+        ? capFirst(nameOf(e.item))
+        : null;
+
     }).filter(Boolean);
 
     if (other.length) {
+
       html += "<h3>Other</h3><ul>";
-      other.forEach(l => html += `<li>${l}</li>`);
+
+      other.forEach(i => {
+        html += `<li>${i}</li>`;
+      });
+
       html += "</ul>";
     }
 
     title.textContent = recipe.name + " Ingredients";
     content.innerHTML = html;
 
-  } catch (e) {
-    console.error(e);
-    content.innerHTML = "<p>Error loading ingredients.</p>";
+  }
+  catch (err) {
+
+    document.getElementById("title").textContent =
+      "Ingredients Error";
+
+    showPageError("content", err);
   }
 }
 
 init();
 
 </script>
-
-</body>
-</html>

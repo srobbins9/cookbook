@@ -56,7 +56,7 @@ h1,
   cursor: pointer;
 }
 
-/* ✅ DARK MODE BUTTONS */
+/* ---------- DARK MODE BUTTONS ---------- */
 body.dark-mode .topbar button {
   background: #111;
   color: white;
@@ -129,7 +129,7 @@ body.dark-mode input {
   box-sizing: border-box;
 }
 
-/* ✅ DARK SEARCH */
+/* ---------- DARK MODE SEARCH BOX ---------- */
 body.dark-mode #search {
   background: #222;
   color: white;
@@ -191,6 +191,33 @@ ol li {
   text-decoration: underline;
 }
 
+/* ---------- ERRORS ---------- */
+
+.error-box {
+  border: 2px soli* #cc0000;
+  background: #ffeeee;
+ *color: #990000;
+  padding: 15px;
+ *margin-top: 20px;
+  border-radius:*6px;
+}
+
+.error-box h2,
+.error-box *3 {
+  margin-top: 0;
+}
+
+.error-box*pre {
+  white-space: pre-wrap;
+  w*rd-break: break-word;
+  overflow-x* auto;
+}
+
+body.dark-mode .error-bo* {
+  background: #3a1111;
+  border*color: #ff6666;
+  color: #ffaaaa;
+*
 
 /* ---------- PRINT RULES ---------- */
 
