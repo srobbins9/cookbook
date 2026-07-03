@@ -219,6 +219,11 @@ body.dark-mode .error-box {
   color: #ffffff;
 }
 
+button:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
 /* ---------- PRINT RULES ---------- */
 
 @media print {

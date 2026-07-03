@@ -184,9 +184,31 @@ async function init() {
 
   }
   catch (err) {
-    document.getElementById("title").textContent = "Recipe Error";
-    const controls = document.querySelector(".controls");
-    if (controls) { controls.style.display = "none"; }
+
+    document.getElementById("title").textContent =
+      "Recipe Error";
+
+    const scaleInput =
+      document.getElementById("scale");
+
+    if (scaleInput) {
+      scaleInput.disabled = true;
+    }
+
+    const applyScale =
+      document.getElementById("applyScale");
+
+    if (applyScale) {
+      applyScale.disabled = true;
+    }
+
+    const unitsBtn =
+      document.getElementById("unitsBtn");
+
+    if (unitsBtn) {
+      unitsBtn.disabled = true;
+    }
+
     showPageError("recipe", err);
   }
 }
