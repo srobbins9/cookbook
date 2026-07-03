@@ -1,4 +1,4 @@
-// Escape HTML so stack traces and messages render safely.
+// Escape HTML so error messages and stack traces display safely.
 function escapeHtml(text) {
   return String(text)
     .replaceAll("&", "&amp;")
@@ -6,7 +6,7 @@ function escapeHtml(text) {
     .replaceAll(">", "&gt;");
 }
 
-// Display a detailed error message inside a page container.
+// Display a detailed error on the page.
 export function showPageError(containerId, error) {
 
   console.error(error);
@@ -50,32 +50,64 @@ export function showPageError(containerId, error) {
   `;
 }
 
-// Shared JSON loader with improved diagnostics.
+// Shared JSON loader with detailed diagnostics.
+//
+// This intentionally loads text first and then parses JSON.
+// Doing so ensures JSON syntax errors are converted into
+// normal JavaScript Errors that can be caught and displayed
+// on the page.
 export async function fetchJSON(path) {
 
   let response;
 
   try {
-    response = await fetch(path);
+
+    response = await fetch(
+      `${path}?v=${Date.now()}`
+    );
+
   }
   catch (err) {
+
     throw new Error(
       `Network error while loading:\n\n${path}\n\n${err.message}`
     );
+
   }
 
   if (!response.ok) {
+
     throw new Error(
       `Failed to load file:\n\n${path}\n\nHTTP ${response.status} ${response.statusText}`
     );
+
+  }
+
+  let text;
+
+  try {
+
+    text = await response.text();
+
+  }
+  catch (err) {
+
+    throw new Error(
+      `Failed reading file:\n\n${path}\n\n${err.message}`
+    );
+
   }
 
   try {
-    return await response.json();
+
+    return JSON.parse(text);
+
   }
   catch (err) {
+
     throw new Error(
       `Invalid JSON in:\n\n${path}\n\n${err.message}`
     );
+
   }
 }
