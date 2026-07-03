@@ -25,7 +25,7 @@
   "ingredients": [
     { "id": "ap-flour", "name": "all-purpose flour", "qty": { "int": 1, "num": 13, "den": 16 }, "unit": "cup", "plural": false, "scale_method": "baking" },
 	{ "id": "baking-powder", "name": "baking powder", "qty": { "int": 4 }, "unit": "tsp", "plural": false, "scale_method": "baking" },
-	{ "id": "white-sugar", "qty": { "num": 1, "den": 2 }, "unit": "cup", "plural": false, "scale_method": "baking" },
+	{ "id": "white-sugar", "name": "white sugar", "qty": { "num": 1, "den": 2 }, "unit": "cup", "plural": false, "scale_method": "baking" },
     { "id": "salted-butter", "name": "salted butter", "qty": { "int": 10 }, "unit": "tbsp", "scale_method": "baking", "plural": false },
     { "id": "egg", "qty": { "int": 2 }, "unit": "", "scale_method": "multiple_1_up" },
     { "id": "vanilla-extract", "name": "vanilla extract", "qty": { "int": 2 }, "unit": "tsp", "plural": false, "scale_method": "baking" },
@@ -36,7 +36,7 @@
 	"Leave {salted-butter:full} and {egg:full} out on counter to get to room temperature.",
 	"Place {foil-cupcake-liner:full} on {sheet-pan:full}. Place a {paper-cupcake-liner} in every {foil-cupcake-liner}.",
 	"Measure {ap-flour:full}. Level off the tablespoons of flour with a {knife} before removing. Pour the flour in {large-bowl}",
-	"Measure {baking-soda:full} and pour into {large-bowl}.",
+	"Measure {baking-powder:full} and pour into {large-bowl}.",
 	"Whisk flour and baking soda together until combined.",
 	"Measure {white-sugar:full} and pour into {mixing-bowl}.",
 	"Cut butter into smaller chunks and place in {small-bowl}. Cover and heat in microwave, stirring every 15 seconds. Once full melted, pour in {mixing-bowl}, using a {silicone-spatula} to get all the butter.",

@@ -1,44 +1,8 @@
 [
-  {
-    "id": "banana-muffins",
-    "name": "Banana Muffins",
-    "category": "breakfast",
-    "tags": ["baked", "sweet"],
-    "file": "data/recipes/banana-muffins.json"
-  },
-  {
-    "id": "blueberry-muffins",
-    "name": "Blueberry Muffins",
-    "category": "breakfast",
-    "tags": ["baked", "sweet"],
-    "file": "data/recipes/blueberry-muffins.json"
-  },
-  {
-    "id": "broccoli-cauliflower-soup",
-    "name": "Broccoli Cauliflower Soup",
-    "category": "dinner",
-    "tags": "vegetarian",
-    "file": "data/recipes/broccoli-cauliflower-soup.json"
-  },
-  {
-    "id": "honey-garlic-chicken",
-    "name": "Honey Garlic Chicken",
-    "category": "dinner",
-    "tags": ["savory", "protein"],
-    "file": "data/recipes/honey-garlic-chicken.json"
-  },
-  {
-    "id": "pizza",
-    "name": "Pizza",
-    "category": "dinner",
-    "tags": ["savory", "baked"],
-    "file": "data/recipes/pizza.json"
-  },
-  {
-    "id": "spinach-artichoke-pasta",
-    "name": "Spinach Artichoke Pasta",
-    "category": "dinner",
-    "tags": ["pasta", "vegetarian"],
-    "file": "data/recipes/spinach-artichoke-pasta.json"
-  }
+  { "id": "banana-muffins", "name": "Banana Muffins", "category": "breakfast", "tags": ["baked", "sweet"], "file": "data/recipes/banana-muffins.json" },
+  { "id": "blueberry-muffins", "name": "Blueberry Muffins", "category": "breakfast", "tags": ["baked", "sweet"], "file": "data/recipes/blueberry-muffins.json" },
+  { "id": "broccoli-cauliflower-soup", "name": "Broccoli Cauliflower Soup", "category": "dinner", "tags": "vegetarian", "file": "data/recipes/broccoli-cauliflower-soup.json" },
+  { "id": "honey-garlic-chicken", "name": "Honey Garlic Chicken", "category": "dinner", "tags": ["savory", "protein"], "file": "data/recipes/honey-garlic-chicken.json" },
+  { "id": "pizza", "name": "Pizza", "category": "dinner", "tags": ["savory", "baked"], "file": "data/recipes/pizza.json" },
+  { "id": "spinach-artichoke-pasta", "name": "Spinach Artichoke Pasta", "category": "dinner", "tags": ["pasta", "vegetarian"], "file": "data/recipes/spinach-artichoke-pasta.json" }
 ]
