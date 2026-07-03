@@ -106,10 +106,30 @@ export async function fetchJSON(path) {
   }
   catch (err) {
 
+    const lines = text.split("\n");
+
+    const start =
+      Math.max(lines.length - 20, 0);
+
+    const fileTail =
+      lines
+        .slice(start)
+        .map((line, idx) =>
+          `${start + idx + 1}: ${line}`
+        )
+        .join("\n");
+
     throw new Error(
+
       `Invalid JSON in:\n\n` +
       `${path}\n\n` +
-      `${err.message}`
+
+      `Browser Error:\n` +
+      `${err.message}\n\n` +
+
+      `Last Lines of File:\n\n` +
+      `${fileTail}`
+
     );
 
   }
