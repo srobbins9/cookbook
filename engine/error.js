@@ -1,4 +1,4 @@
-// Escape HTML so error messages and stack traces display safely.
+// Escape HTML so error messages display safely.
 function escapeHtml(text) {
   return String(text)
     .replaceAll("&", "&amp;")
@@ -20,9 +20,6 @@ export function showPageError(containerId, error) {
   const message =
     error?.message || "Unknown error";
 
-  const stack =
-    error?.stack || "";
-
   container.innerHTML = `
     <div class="error-box">
 
@@ -32,19 +29,7 @@ export function showPageError(containerId, error) {
         An error occurred while loading content.
       </p>
 
-      <h3>Error</h3>
-
       <pre>${escapeHtml(message)}</pre>
-
-      ${
-        stack
-          ? `
-            <h3>Stack Trace</h3>
-
-            <pre>${escapeHtml(stack)}</pre>
-          `
-          : ""
-      }
 
     </div>
   `;
@@ -65,8 +50,8 @@ export async function fetchJSON(path) {
   catch (err) {
 
     throw new Error(
-      `Network error while loading:\n\n` +
-      `${path}\n\n` +
+      `Network Error\n\n` +
+      `File:\n${path}\n\n` +
       `${err.message}`
     );
 
@@ -75,8 +60,8 @@ export async function fetchJSON(path) {
   if (!response.ok) {
 
     throw new Error(
-      `Failed to load file:\n\n` +
-      `${path}\n\n` +
+      `File Load Error\n\n` +
+      `File:\n${path}\n\n` +
       `HTTP ${response.status} ${response.statusText}`
     );
 
@@ -92,8 +77,8 @@ export async function fetchJSON(path) {
   catch (err) {
 
     throw new Error(
-      `Failed reading file:\n\n` +
-      `${path}\n\n` +
+      `File Read Error\n\n` +
+      `File:\n${path}\n\n` +
       `${err.message}`
     );
 
@@ -108,27 +93,33 @@ export async function fetchJSON(path) {
 
     const lines = text.split("\n");
 
-    const start =
-      Math.max(lines.length - 20, 0);
+    const startLine =
+      Math.max(lines.length - 15, 0);
 
-    const fileTail =
+    const fileContext =
       lines
-        .slice(start)
+        .slice(startLine)
         .map((line, idx) =>
-          `${start + idx + 1}: ${line}`
+          `${startLine + idx + 1}: ${line}`
         )
         .join("\n");
 
     throw new Error(
 
-      `Invalid JSON in:\n\n` +
-      `${path}\n\n` +
+      `Invalid JSON\n\n` +
 
-      `Browser Error:\n` +
-      `${err.message}\n\n` +
+      `File:\n${path}\n\n` +
 
-      `Last Lines of File:\n\n` +
-      `${fileTail}`
+      `Browser Error:\n${err.message}\n\n` +
+
+      `Common Causes:\n` +
+      `• Trailing comma before ] or }\n` +
+      `• Missing comma\n` +
+      `• Extra ] or }\n` +
+      `• Missing ] or }\n\n` +
+
+      `Last Lines Of File:\n\n` +
+      fileContext
 
     );
 

@@ -194,30 +194,30 @@ ol li {
 /* ---------- ERRORS ---------- */
 
 .error-box {
-  border: 2px soli* #cc0000;
-  background: #ffeeee;
- *color: #990000;
-  padding: 15px;
- *margin-top: 20px;
-  border-radius:*6px;
+  padding: 16px;
+  border-radius: 8px;
+  margin-top: 20px;
+  border: 2px solid #cc0000;
+  background: #fff0f0;
+  color: #660000;
 }
 
-.error-box h2,
-.error-box *3 {
+.error-box h2 {
   margin-top: 0;
 }
 
-.error-box*pre {
+.error-box pre {
   white-space: pre-wrap;
-  w*rd-break: break-word;
-  overflow-x* auto;
+  word-break: break-word;
+  overflow-x: auto;
 }
-
-body.dark-mode .error-bo* {
-  background: #3a1111;
-  border*color: #ff6666;
-  color: #ffaaaa;
 *
+
+body.dark-mode .error-box {
+  background: #1f1f1f;
+  border-color: #ff5555;
+  color: #ffffff;
+}
 
 /* ---------- PRINT RULES ---------- */
 
