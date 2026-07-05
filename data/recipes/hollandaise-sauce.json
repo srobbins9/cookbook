@@ -1,0 +1,40 @@
+{
+  "id": "hollandaise-sauce",
+  "name": "Hollandaise Sauce",
+
+  "servings": { "qty": 1, "unit": "batch", "scale_method": "multiple_1_rounded" },
+
+  "equipment": [
+	{ "qty": 2, "id": "small-bowl", "name": "small bowl", "scale_method": "fixed" }, 
+	{ "qty": 1, "id": "medium-bowl", "name": "medium bowl", "scale_method": "fixed" },
+	{ "options": [ { "qty": 1, "id": "fork", "scale_method": "fixed" }, { "qty": 1, "id": "whisk", "scale_method": "fixed" } ] },
+	{ "qty": 1, "id": "spoon", "scale_method": "fixed" },
+	{ "qty": 1, "id": "silicone-spatula", "name": "silicone spatula", "scale_method": "fixed" },
+	{ "qty": 1, "id": "skillet", "scale_method": "fixed" },
+	{ "id": "stovetop", "scale_method": "fixed" },
+  ],
+
+  "ingredients": [
+	{ "id": "salted-butter", "name": "salted buter", "qty": { "int": 4 }, "unit": "tbsp", "plural": false, "scale_method": "baking" },
+	{ "id": "egg", "name": "egg yolk", "qty": { "int": 4 }, "scale_method": "multiple_1_rounded" },
+	{ "id": "lemon-juice", "name": "lemon juice", "qty": { "int": 2 }, "unit": "tsp", "plural": false, "scale_method": "fraction_4_rounded" },
+	{ "id": "heavy-whipping-cream", "name": "heavy whipping cream", "qty": { "int": 1 }, "unit": "tsp", "plural": false, "scale_method": "fraction_4_rounded" },
+	{ "id": "dijon-mustard", "name": "dijon mustard", "qty": { "int": 1 }, "unit": "tsp", "plural": false, "scale_method": "fraction_4_rounded" },
+	{ "id": "cayenne-pepper", "name": "ground cayenne pepper", "qty": { "num": 1, "den": 4 }, "unit": "tsp", "plural": false, "scale_method": "fraction_4_rounded" },
+	{ "id": "black-pepper", "name": "ground black pepper", "qty": { "num": 1, "den": 4 }, "unit": "tsp", "plural": false, "scale_method": "fraction_4_rounded" },
+	{ "id": "spinach", "name": "spinach", "qty": { "num": 1, "den": 2 }, "unit": "cup", "plural": false, "scale_method": "fraction_4_rounded" },
+  ],
+
+  "instructions": [
+	"If using spinach, take {spinach:full}, remove stems and rip leaves into smaller pieces.",
+	"Crack {egg:full}, placing the yolks in a {medium-bowl} and whites into a {small-bowl}.",
+	"Measure {lemon-juice:full}. Place in {medium-bowl}.",
+	"Measure {dijon-mustard:full}. Place in {medium-bowl}."
+	"Whisk ingredients in {medium-bowl} until combined.",
+	"Measure {salted-butter:full}. Place in a second {small-bowl}. Melt in microwave (stirring every 15 seconds).",
+	"While mixing sauce, slowly add butter 1 spoonful at a time. Adding butter too quickly will curdle the egg yolks.",
+	"Place skillet on low heat. If heat is too hot egg yolks will curdle. You can pour a small spoonful of sauce into pan to test the temperature.",
+	"Pour sauce into skillet and add spinach. Stir constantly for 20-30 seconds.",
+	"Pour sauce back into medium bowl. Sauce will thicken as it cools. To thin, add splash of heavy whipping cream."
+  ]
+}

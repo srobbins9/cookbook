@@ -1,0 +1,30 @@
+{
+  "id": "chicken-noodle-soup",
+  "name": "Chicken Noodle Soup",
+
+  "servings": { "qty": 12, "unit": "cup", "scale_method": "fraction_2_rounded" },
+
+  "equipment": [
+	{ "qty": 1, "id": "measuring-cup", "name": "measuring cup", "unit": "pack", "scale_method": "multiple_1_up" }, 
+	{ "qty": 1, "id": "mandoline-slicer", "name": "mandoline slicer", "scale_method": "fixed" },
+	{ "qty": 1, "id": "large-pot", "name": "large pot", "scale_method": "fixed" },
+	{ "qty": 1, "id": "knife", "scale_method": "fixed" }, 
+	{ "qty": 1, "id": "slotted-spoon", "scale_method": "fixed" },
+	{ "qty": 1, "id": "laddle", "scale_method": "fixed" }
+  ],
+
+  "ingredients": [
+	{ "id": "top-crop-soup-greens", "name": "Top Crop Soup Greens", "qty": { "int": 1 }, "unit": "pack", "plural": false, "scale_method": "multiple_1_up" },
+    { "id": "unsalted-butter", "name": "unsalted butter", "qty": { "int": 4 }, "unit": "tbsp", "plural": false, "scale_method": "fraction_2_rounded" },
+    { "id": "ap-flour", "name": "all-purpose flour", "qty": { "int": 3 }, "unit": "tbsp", "plural": false, "scale_method": "fraction_4_rounded" },
+	{ "id": "mini-italian-meatballs", "name": "mini Italian meatballs", "qty": { "int": 1 }, "unit": "pack", "plural": false, "scale_method": "multiple_1_up" },
+	{ "id": "chicken", "qty": { "int": 1 }, "unit": "cup", "plural": false, "scale_method": "fraction_4_rounded" },
+	{ "id": "chicken-broth", "name": "low-sodium chicken broth", "qty": { "int": 6 }, "unit": "cup", "plural": false, "scale_method": "fraction_4_rounded" }
+	{ "id": "orzo-noodles", "name": "orzo noodles", "qty": { "int": 1 }, "unit": "cup", "plural": false, "scale_method": "fraction_4_rounded" },
+	{ "id": "black-pepper", "name": "ground black pepper", "plural": false },
+	{ "id": "grated-parmesan-cheese", "name": "grated parmesan cheese", "plural": false, "scale_method": "fixed"}
+  ],
+
+  "instructions": [
+  ]
+}

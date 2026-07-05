@@ -1,0 +1,33 @@
+{
+  "id": "poached-egg",
+  "name": "Poached Egg",
+
+  "servings": { "qty": 1, "unit": "egg", "scale_method": "multiple_1_up" },
+
+  "equipment": [
+	{ "qty": 1, "id": "pot", "scale_method": "fixed" }, 
+	{ "id": "measuring-spoons", "name": "measuring spoons", "scale_method": "fixed" },
+	{ "qty": 1, "id": "slotted-spoon", "name": "slotted-spoon", "scale_method": "fixed" },
+	{ "qty": 1, "id": "fine-mesh-strainer", "name": "fine mesh strainer", "scale_method": "fixed" }, 
+	{ "qty": 1, "id": "small-bowl", "name": "small bowl", "scale_method": "fixed" },
+  ],
+
+  "ingredients": [
+	{ "id": "water", "scale_method": "fixed" },
+    { "id": "vinigar", "name": "vinigar", "qty": { "int": 1 }, "unit": "tbsp", "plural": false, "scale_method": "fixed" },
+    { "id": "egg", "qty": { "int": 1 }, "plural": false, "scale_method": "multiple_1_up" },
+  ],
+
+  "instructions": [
+	"Fill {pot} ~3\" deep with water.",
+	"Measure {vinigar:full} and pour into {pot}.",
+	"Place pot on stovetop. Heat on high to bring water to a boil, then reduce to low heat.",
+	"Crack egg into fine mesh strainer to remove any runny whites.",
+	"Place remaining egg into small bowl.",
+	"Stir water with large {slotted-spoon} to create a vortex.",
+	"Gently pour egg into center of vortex.",
+	"Let egg cook for ~3 minutes.",
+	"Remove egg with {slotted-spoon}.",
+	"Repeat steps 4-9 for all eggs."
+  ]
+}

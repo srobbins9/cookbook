@@ -27,7 +27,7 @@
 	{ "id": "baking-powder", "name": "baking powder", "qty": { "int": 4 }, "unit": "tsp", "plural": false, "scale_method": "baking" },
 	{ "id": "white-sugar", "name": "white sugar", "qty": { "num": 1, "den": 2 }, "unit": "cup", "plural": false, "scale_method": "baking" },
     { "id": "salted-butter", "name": "salted butter", "qty": { "int": 10 }, "unit": "tbsp", "scale_method": "baking", "plural": false },
-    { "id": "egg", "qty": { "int": 2 }, "unit": "", "scale_method": "multiple_1_up" },
+    { "id": "egg", "qty": { "int": 2 }, "scale_method": "multiple_1_up" },
     { "id": "vanilla-extract", "name": "vanilla extract", "qty": { "int": 2 }, "unit": "tsp", "plural": false, "scale_method": "baking" },
     { "id": "banana", "name": "overipe medium bananas", "qty": { "int": 6 }, "scale_method": "fraction_4_rounded" }
   ],
