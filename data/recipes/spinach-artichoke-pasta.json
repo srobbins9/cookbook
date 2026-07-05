@@ -21,7 +21,7 @@
   ],
 
   "ingredients": [
-    { "id": "pasta", "qty": { "int": 10, "num": 1, "den": 2 }, "unit": "oz", "plural": false, "scale_method": "fraction_4_down" },
+    { "id": "pasta", "qty": { "int": 10, "num": 1, "den": 2 }, "unit": "oz", "plural": false, "scale_method": "decimal_1_rounded" },
     { "id": "avocado-oil", "name": "avocado oil", "qty": { "int": 1 }, "unit": "tbsp", "plural": false, "scale_method": "baking" },
     { "id": "garlic", "qty": { "int": 4 }, "unit": "clove", "plural": false, "scale_method": "multiple_1_up" },
     { "id": "red-pepper-flakes", "name": "red pepper flakes", "qty": { "num": 1, "den": 4 }, "unit": "tsp", "plural": false, "scale_method": "fraction_4_down" },
