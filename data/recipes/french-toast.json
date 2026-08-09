@@ -22,7 +22,7 @@
 	{ "id": "cinnamon", "name": "ground cinnamon",  "qty": { "int": 1 }, "unit": "tsp", "plural": false, "scale_method": "baking" },
 	{ "id": "ap-flour", "name": "all-purpose flour", "qty": { "num": 1, "den": 4 }, "unit": "cup", "plural": false, "scale_method": "baking" },
 	{ "id": "bread", "qty": { "int": 8 }, "unit": "slices", "plural": false, "scale_method": "multiple_1_up" },
-	{ "id": "salted-butter", "name": "salted butter", "plural": false }
+	{ "id": "salted-butter", "name": "salted butter", "plural": false },
 	{ "id": "cinnamon-sugar", "name": "cinnamon sugar", "plural": false },
   ],
 
