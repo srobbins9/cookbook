@@ -1,5 +1,7 @@
 [
   { "id": "baked", "name": "Baked" },
+  { "id": "cooked", "name": "Cooked" },
+  { "id": "hearty", "name": "Hearty" },
   { "id": "pasta", "name": "Pasta" },
   { "id": "protein", "name": "Protein" },
   { "id": "savory", "name": "Savory" },

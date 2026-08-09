@@ -9,13 +9,13 @@
 	{ "id": "measuring-spoons", "name": "measuring spoons", "scale_method": "fixed" },
 	{ "qty": 1, "id": "slotted-spoon", "name": "slotted-spoon", "scale_method": "fixed" },
 	{ "qty": 1, "id": "fine-mesh-strainer", "name": "fine mesh strainer", "scale_method": "fixed" }, 
-	{ "qty": 1, "id": "small-bowl", "name": "small bowl", "scale_method": "fixed" },
+	{ "qty": 1, "id": "small-bowl", "name": "small bowl", "scale_method": "fixed" }
   ],
 
   "ingredients": [
 	{ "id": "water", "scale_method": "fixed" },
     { "id": "vinigar", "name": "vinigar", "qty": { "int": 1 }, "unit": "tbsp", "plural": false, "scale_method": "fixed" },
-    { "id": "egg", "qty": { "int": 1 }, "plural": false, "scale_method": "multiple_1_up" },
+    { "id": "egg", "qty": { "int": 1 }, "plural": false, "scale_method": "multiple_1_up" }
   ],
 
   "instructions": [

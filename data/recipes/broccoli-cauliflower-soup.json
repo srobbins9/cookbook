@@ -10,7 +10,7 @@
 	{ "id": "measuring-spoons", "name": "measuring spoons", "scale_method": "fixed" },
 	{ "qty": 1, "id": "silicone-spatula", "name": "silicone spatula", "scale_method": "fixed" },
 	{ "qty": 1, "id": "large-metal-spoon", "name": "large metal spoon", "scale_method": "fixed" },
-	{ "qty": 1, "id": "large-pot", "name": "large pot", "scale_method": "fixed" },
+	{ "qty": 1, "id": "large-pot", "name": "large pot", "scale_method": "fixed" }
   ],
 
   "ingredients": [
@@ -27,8 +27,7 @@
   ],
 
   "instructions": [
-	"
-	"Measure {salted-butter} and place in {large-pot} on stovetop set to medium heat.",
+	"Measure {salted-butter} and place in {large-pot} on stovetop set to medium heat."
 
   ]
 }

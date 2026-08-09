@@ -1,3 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Equipment</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div class="topbar">
+  <button id="recipeBtn">← Recipe</button>
+  <button id="printBtn">Print</button>
+  <button id="ingredientsBtn">Ingredients</button>
+  <button id="displayBtn">Display: Light</button>
+</div>
+
+<h1 id="title">Loading...</h1>
+<div id="content"></div>
+
 <script type="module">
 
 import {
@@ -70,9 +90,11 @@ async function init() {
       throw new Error("Missing recipe parameter in URL.");
     }
 
-    document.getElementById("recipeBtn").onclick = ...
-    document.getElementById("printBtn").onclick = ...
-    document.getElementById("ingredientsBtn").onclick = ...
+    document.getElementById("recipeBtn").onclick = () =>
+      location.href = `recipe.html?recipe=${id}`;
+    document.getElementById("printBtn").onclick = () => window.print();
+    document.getElementById("ingredientsBtn").onclick = () =>
+      location.href = `ingredients.html?recipe=${id}`;
 
     const recipeIndex = await fetchJSON("data/recipes.json");
 
@@ -202,3 +224,6 @@ async function init() {
 init();
 
 </script>
+
+</body>
+</html>

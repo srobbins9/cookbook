@@ -21,7 +21,7 @@
     { "id": "unsalted-butter", "name": "unsalted butter", "qty": { "int": 4 }, "unit": "tbsp", "plural": false, "scale_method": "fraction_2_rounded" },
     { "id": "ap-flour", "name": "all-purpose flour", "qty": { "int": 3 }, "unit": "tbsp", "plural": false, "scale_method": "fraction_4_rounded" },
 	{ "id": "orzo-noodles", "name": "orzo noodles", "qty": { "int": 2 }, "unit": "cup", "plural": false, "scale_method": "fraction_4_rounded" },
-	{ "id": "chicken-broth", "name": "low-sodium chicken broth", "qty": { "int": 6 }, "unit": "cup", "plural": false, "scale_method": "fraction_4_rounded" }
+	{ "id": "chicken-broth", "name": "low-sodium chicken broth", "qty": { "int": 6 }, "unit": "cup", "plural": false, "scale_method": "fraction_4_rounded" },
 	{ "id": "black-pepper", "name": "ground black pepper", "plural": false },
 	{ "id": "mini-italian-meatballs", "name": "mini Italian meatballs", "qty": { "int": 50 }, "unit": "mini meatballs", "plural": false, "scale_method": "multiple_1_up" },
 	{ "id": "grated-parmesan-cheese", "name": "grated parmesan cheese", "plural": false, "scale_method": "fixed"}

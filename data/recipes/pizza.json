@@ -26,7 +26,7 @@
 	  "name": "kitchen shears",
       "scale_method": "fixed",
 	  "plural": false
-    },
+    }
   ],
 
   "ingredients": [

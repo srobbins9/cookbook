@@ -11,7 +11,7 @@
 	{ "options": [ { "qty": 1, "id": "whisk", "name": "whisk", "scale_method": "fixed" }, { "qty": 1, "id": "hand-mixer", "name": "hand mixer", "scale_method": "fixed" } ] },
 	{ "qty": 1, "id": "spatula", "scale_method": "fixed" },
 	{ "qty": 1, "id": "skillet", "scale_method": "fixed" },
-	{ "qty": 1, "id": "cooling-rack", "name": "cooling rack", "scale_method": "multiple_1_up" },
+	{ "qty": 1, "id": "cooling-rack", "name": "cooling rack", "scale_method": "multiple_1_up" }
   ],
 
   "ingredients": [
@@ -23,7 +23,7 @@
 	{ "id": "ap-flour", "name": "all-purpose flour", "qty": { "num": 1, "den": 4 }, "unit": "cup", "plural": false, "scale_method": "baking" },
 	{ "id": "bread", "qty": { "int": 8 }, "unit": "slices", "plural": false, "scale_method": "multiple_1_up" },
 	{ "id": "salted-butter", "name": "salted butter", "plural": false },
-	{ "id": "cinnamon-sugar", "name": "cinnamon sugar", "plural": false },
+	{ "id": "cinnamon-sugar", "name": "cinnamon sugar", "plural": false }
   ],
 
   "instructions": [
