@@ -1,0 +1,45 @@
+{
+  "id": "french-toast",
+  "name": "French Toast",
+
+  "servings": { "qty": 8, "unit": "slice", "scale_method": "multiple_1_up" },
+
+  "equipment": [
+	{ "qty": 1, "id": "measuring-cup", "name": "measuring cup", "scale_method": "fixed" }, 	
+	{ "id": "measuring-spoons", "name": "measuring spoons", "scale_method": "fixed" },
+	{ "qty": 1, "id": "mixing-bowl", "name": "mixing bowl", "scale_method": "fixed" }, 
+	{ "options": [ { "qty": 1, "id": "whisk", "name": "whisk", "scale_method": "fixed" }, { "qty": 1, "id": "hand-mixer", "name": "hand mixer", "scale_method": "fixed" } ] },
+	{ "qty": 1, "id": "spatula", "scale_method": "fixed" },
+	{ "qty": 1, "id": "skillet", "scale_method": "fixed" },
+	{ "qty": 1, "id": "cooling-rack", "name": "cooling rack", "scale_method": "multiple_1_up" },
+  ],
+
+  "ingredients": [
+    { "id": "milk", "qty": { "num": 2, "den": 3 }, "unit": "cup", "plural": false, "scale_method": "baking" },
+    { "id": "white-sugar", "name": "white sugar", "qty": { "num": 1, "den": 4 }, "unit": "cup", "plural": false, "scale_method": "baking" },
+	{ "id": "egg", "qty": { "int": 4 }, "scale_method": "multiple_1_rounded" },
+	{ "id": "vanilla-extract", "name": "vanilla extract", "qty": { "int": 1 }, "unit": "tsp", "plural": false, "scale_method": "baking" },
+	{ "id": "cinnamon", "name": "ground cinnamon",  "qty": { "int": 1 }, "unit": "tsp", "plural": false, "scale_method": "baking" },
+	{ "id": "ap-flour", "name": "all-purpose flour", "qty": { "num": 1, "den": 4 }, "unit": "cup", "plural": false, "scale_method": "baking" },
+	{ "id": "bread", "qty": { "int": 8 }, "unit": "slices", "plural": false, "scale_method": "multiple_1_up" },
+	{ "id": "salted-butter", "name": "salted butter", "plural": false }
+	{ "id": "cinnamon-sugar", "name": "cinnamon sugar", "plural": false },
+  ],
+
+  "instructions": [
+	"Set {egg:full} on counter and leave until room temperature.",
+	"Measure {milk:full} and pour into {mixing-bowl}.",
+	"Measure {white-sugar:full} and pour into {mixing-bowl}.",
+	"Crack eggs and pour contents into {mixing-bowl}.",
+	"Measure {vanilla-extract:full} and pour into {mixing-bowl}.",
+	"Whisk {mixing-bowl} to combine ingredients.",
+	"Measure {cinnamon:full} and pour into {mixing-bowl}.",
+	"Measure {ap-flour:full}. While whisking, slowly add flour to batter. Mix until combined.",
+	"Set {skillet} on stovetop and set heat to low.",
+	"Dip a slice of bread into batter to fully coat.",
+	"Butter skillet and add slice of bread.",
+	"Once bottom face of bread starts to get golden brown, pick up slice with spatula, butter skillet, and flip bread to cook other side.",
+	"Once other side is golden brown, place on {cooling-rack} adn sprinkle with {cinnamon-sugar}.",
+	"Repeat steps 10-13 for all bread slices."	
+  ]
+}

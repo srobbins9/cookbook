@@ -1,6 +1,8 @@
 [
   { "id": "banana-muffins", "name": "Banana Muffins", "category": "breakfast", "tags": ["baked", "sweet"], "file": "data/recipes/banana-muffins.json" },
   { "id": "blueberry-muffins", "name": "Blueberry Muffins", "category": "breakfast", "tags": ["baked", "sweet"], "file": "data/recipes/blueberry-muffins.json" },
+  { "id": "chicken-noodle-soup", "name": "Chicken Noodle Soup", "category": "dinner", "tags": ["hearty", "protein"], "file": "data/recipes/chicken-noodle-soup.json" },
+  { "id": "french-toast", "name": "French Toast", "category": "breakfast", "tags": ["cooked", "sweet"], "file": "data/recipes/french-toast.json" },
   { "id": "broccoli-cauliflower-soup", "name": "Broccoli Cauliflower Soup", "category": "dinner", "tags": "vegetarian", "file": "data/recipes/broccoli-cauliflower-soup.json" },
   { "id": "hollandaise-sauce", "name": "Hollandaise Sauce", "category": "breakfast", "file": "data/recipes/hollandaise-sauce.json" },
   { "id": "honey-garlic-chicken", "name": "Honey Garlic Chicken", "category": "dinner", "tags": ["savory", "protein"], "file": "data/recipes/honey-garlic-chicken.json" },

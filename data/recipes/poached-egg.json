@@ -22,7 +22,7 @@
 	"Fill {pot} ~3\" deep with water.",
 	"Measure {vinigar:full} and pour into {pot}.",
 	"Place pot on stovetop. Heat on high to bring water to a boil, then reduce to low heat.",
-	"Crack egg into fine mesh strainer to remove any runny whites.",
+	"Crack egg into {fine-mesh-strainer} to remove any runny whites.",
 	"Place remaining egg into small bowl.",
 	"Stir water with large {slotted-spoon} to create a vortex.",
 	"Gently pour egg into center of vortex.",
