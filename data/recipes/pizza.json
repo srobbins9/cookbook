@@ -74,9 +74,9 @@
     "Spread {pizza-dough:full} across {sheet-pan:full} and let rise for 30 minutes.",
     "Coat top of dough with {egg} wash or {pesto}.",
     "Bake for 25 minutes or until crust is golden. During this time, cut {mozzarella-cheese-sliced:full} into thin slices.",
-    "Add {mozzarella-cheese} pieces to pizza.",
+    "Add {mozzarella-cheese-sliced} pieces to pizza.",
     "Bake for an additional 10 minutes.",
 	"Let cool on pan for 10 minutes.",
-	"Cut pizza(s) into 8 slices using {kitchen-shears}."
+	"Cut the pizza into 8 slices using {kitchen-shears}."
   ]
 }

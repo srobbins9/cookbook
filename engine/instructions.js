@@ -132,6 +132,22 @@ function formatInstructionItem(item, mode, defaultMode) {
   return getDisplayName(item);
 }
 
+// Find an item by id, including items inside an option group.
+function findInstructionItem(items, key) {
+  for (const item of items || []) {
+    if (item.id === key) {
+      return item;
+    }
+
+    const option = item.options?.find((candidate) => candidate.id === key);
+    if (option) {
+      return option;
+    }
+  }
+
+  return null;
+}
+
 // Expand placeholders in instruction text.
 //    {item-id}       --> name only
 //    {item-id:full}  --> quantity + unit + name
@@ -145,13 +161,13 @@ export function expandInstruction(text, ingredients, equipment) {
     const key = parts[0].trim();
     const mode = parts[1] ? parts[1].trim().toLowerCase() : "";
 
-    const ing = ingredients.find(i => i.id === key);
+    const ing = findInstructionItem(ingredients, key);
     if (ing) {
       // ✅ default now = name
       return formatInstructionItem(ing, mode, "name");
     }
 
-    const eq = equipment.find(e => e.id === key);
+    const eq = findInstructionItem(equipment, key);
     if (eq) {
       // ✅ default now = name
       return formatInstructionItem(eq, mode, "name");
