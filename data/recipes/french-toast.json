@@ -36,10 +36,11 @@
 	"Measure {cinnamon:full} and pour into {mixing-bowl}.",
 	"Measure {ap-flour:full}. While whisking, slowly add flour to batter. Mix until combined.",
 	"Set {skillet} on stovetop and set heat to low.",
+    "Butter skillet.",
 	"Dip a slice of bread into batter to fully coat.",
-	"Butter skillet and add slice of bread.",
+	"Add slice of bread to {skillet}.",
 	"Once bottom face of bread starts to get golden brown, pick up slice with spatula, butter skillet, and flip bread to cook other side.",
-	"Once other side is golden brown, place on {cooling-rack} adn sprinkle with {cinnamon-sugar}.",
-	"Repeat steps 10-13 for all bread slices."	
+	"Once other side is golden brown, place on {cooling-rack} and sprinkle with {cinnamon-sugar}.",
+	"Repeat steps 10-14 for all slices of bread."	
   ]
 }
